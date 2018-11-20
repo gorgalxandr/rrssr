@@ -1,28 +1,28 @@
-import express from "express"
-import cors from "cors"
-import React from "react"
-import { renderToString } from "react-dom/server"
-import { StaticRouter, matchPath } from "react-router-dom"
-import serialize from "serialize-javascript"
+import express from 'express'
+import cors from 'cors'
+import React from 'react'
+import { renderToString } from 'react-dom/server'
+import { StaticRouter, matchPath } from 'react-router-dom'
+import serialize from 'serialize-javascript'
 import App from '../shared/App'
 import routes from '../shared/routes'
 
 const app = express()
 
 app.use(cors())
-app.use(express.static("public"))
+app.use(express.static('public'))
 
-app.get("*", (req, res, next) => {
-  const activeRoute = routes.find((route) => matchPath(req.url, route)) || {}
+app.get('*', (req, res, next) => {
+  const activeRoute = routes.find(route => matchPath(req.url, route)) || {}
 
   const promise = activeRoute.fetchInitialData
     ? activeRoute.fetchInitialData(req.path)
     : Promise.resolve()
 
-  promise.then((data) => {
+  promise.then(data => {
     const context = { data }
 
-    const markup = renderToString(
+    const HTML = renderToString(
       <StaticRouter location={req.url} context={context}>
         <App />
       </StaticRouter>
@@ -38,8 +38,12 @@ app.get("*", (req, res, next) => {
         </head>
 
         <body>
-          <div id="app">${markup}</div>
+          <div id="app">${HTML}</div>
         </body>
+
+        <script>
+          console.log('[ DATA: APP_STORE ]', ${serialize(data)});
+        </script>
       </html>
     `)
   }).catch(next)
