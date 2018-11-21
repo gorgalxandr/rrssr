@@ -95,11 +95,11 @@ const server = {
   plugins: [
     new webpack.DefinePlugin({
       __isBrowser__: 'false'
-    })
+    }),
     new MiniCssExtractPlugin({
-      filename: "[name].css",
-      chunkFilename: "[id].css"
-    }))
+      filename: './public/styles/[name].css',
+      chunkFilename: './public/styles/[id].css'
+    })
   ]
 }
 
