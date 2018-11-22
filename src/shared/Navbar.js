@@ -31,6 +31,12 @@ export default function Navbar () {
           </NavLink>
         </li>
       ))}
+      <NavLink 
+        activeStyle={{fontWeight: 'bold'}} 
+        to={`/todos`}
+      >
+        Todos
+      </NavLink>
     </ul>
   )
 }

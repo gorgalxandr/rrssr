@@ -19,27 +19,32 @@ class Grid extends Component {
 
     this.fetchRepos = this.fetchRepos.bind(this)
   }
+
   componentDidMount () {
     if (!this.state.repos) {
       this.fetchRepos(this.props.match.params.id)
     }
   }
+
   componentDidUpdate (prevProps, prevState) {
     if (prevProps.match.params.id !== this.props.match.params.id) {
       this.fetchRepos(this.props.match.params.id)
     }
   }
+
   fetchRepos (lang) {
     this.setState(() => ({
       loading: true
     }))
 
+    // Available only on the as prop route method 
     this.props.fetchInitialData(lang)
       .then((repos) => this.setState(() => ({
         repos,
         loading: false,
       })))
   }
+
   render() {
     const { loading, repos } = this.state
 

@@ -5,7 +5,30 @@ import { renderToString } from 'react-dom/server'
 import { StaticRouter, matchPath } from 'react-router-dom'
 import serialize from 'serialize-javascript'
 import App from '../shared/App'
-import routes from '../shared/routes'
+import Home from '../shared/Home'
+import Grid from '../shared/Grid'
+// import NotFound from './NotFound'
+import TodoList from '../shared/Todos'
+import { fetchPopularRepos } from '../shared/api'
+import loadData from '../shared/loadData'
+
+const routes = [{
+  path: '/',
+  exact: true,
+  component: Home,
+  // title: 'The title'
+},
+{
+  path: '/todos',
+  component: TodoList,
+  // loadData: () => loadData('todos'),
+  // test: 'test'
+},
+{
+  path: '/popular/:id',
+  component: Grid,
+  fetchInitialData: (path = '') => fetchPopularRepos(path.split('/').pop())
+}]
 
 const app = express()
 
@@ -14,26 +37,41 @@ app.use(express.static('public'))
 
 app.get('*', (req, res, next) => {
   const activeRoute = routes.find(route => matchPath(req.url, route)) || {}
+  let promise
 
-  const promise = activeRoute.fetchInitialData
+  promise = activeRoute.loadData
+    ? activeRoute.loadData(req.path)
+    : Promise.resolve()
+
+  promise = activeRoute.fetchInitialData
     ? activeRoute.fetchInitialData(req.path)
     : Promise.resolve()
 
   promise.then(data => {
     const context = { data }
-
     const HTML = renderToString(
-      <StaticRouter location={req.url} context={context}>
+      <StaticRouter 
+        location={req.url} 
+        context={context}
+      >
         <App />
       </StaticRouter>
     )
+
+    if (context.status === 404) {
+      res.status(404)
+    }
+
+    if (context.url) {
+      return res.redirect(301, context.url)
+    }
 
     res.send(`
       <!DOCTYPE html>
       <html>
         <head>
           <title>SSR with RR</title>
-          <link rel='stylesheet' type='text/css' href='styles/server.css'>
+          <link rel='stylesheet' type='text/css' href='/styles/server.css'>
           <script src="/bundle.js" defer></script>
           <script>window.__INITIAL_DATA__ = ${serialize(data)}</script>
         </head>
@@ -50,7 +88,7 @@ app.get('*', (req, res, next) => {
   }).catch(next)
 })
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log(`Server is listening on port: 3000`)
 })
 

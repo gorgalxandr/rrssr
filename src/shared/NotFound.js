@@ -16,14 +16,14 @@ export default class NotFound extends Component {
   render() {
     return (
       <div>
-        <Link
+        {/* <Link
           to='/'
           className={this.props.params.splat === '500'
           ? 'qbt-notFound qbt-notFount_500'
           : 'qbt-notFound'}
-        >
+        > */}
           {this.getImg()}
-        </Link>
+        {/* </Link> */}
       </div>
     )
   }
