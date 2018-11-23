@@ -9,7 +9,7 @@ const routes =  [
     path: '/',
     exact: true,
     component: Home,
-    title: 'A nice title'
+    title: 'Select a language'
   },
   {
     path: '/popular/:id',

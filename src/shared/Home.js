@@ -1,9 +1,10 @@
 import React from 'react'
 
-export default function Home() {
+export default function Home(props) {
+  const { title } = props
   return (
     <div>
-      Select a Language
+      {title}
     </div>
   )
 }
