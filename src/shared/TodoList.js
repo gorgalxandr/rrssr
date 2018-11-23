@@ -7,7 +7,7 @@ class TodoList extends Component {
         <div className="header">
           <form onSubmit={this.props.addItem}>
             <input placeholder="Task" />
-            <button type="submit"> Add Task {this}</button>
+            <button type="submit"> Add Task</button>
           </form>
         </div>
       </div>
@@ -17,7 +17,7 @@ class TodoList extends Component {
 
 // vs.
 
-// const TodoList = props => (
+// export default const TodoList = props => (
 //   <div className="todoListMain">
 //     <div className="header">
 //       <form onSubmit={this.props.addItem}>
