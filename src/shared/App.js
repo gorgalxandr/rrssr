@@ -12,24 +12,7 @@ import { fetchPopularRepos } from './api'
 import loadData from './loadData'
 
 console.log('[ routes ]', typeof routes)
-
-// const routes = [{
-//   path: '/',
-//   exact: true,
-//   component: Home,
-//   // title: 'The title'
-// },
-// {
-//   path: '/todos',
-//   component: TodoList,
-//   // loadData: () => loadData('todos'),
-//   // test: 'test'
-// },
-// {
-//   path: '/popular/:id',
-//   component: Grid,
-//   fetchInitialData: (path = '') => fetchPopularRepos(path.split('/').pop())
-// }]
+console.log('[ routes ]', routes)
 
 class App extends Component {
   render() {

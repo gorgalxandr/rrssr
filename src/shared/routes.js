@@ -9,6 +9,7 @@ const routes =  [
     path: '/',
     exact: true,
     component: Home,
+    title: 'A nice title'
   },
   {
     path: '/popular/:id',
@@ -19,26 +20,8 @@ const routes =  [
     path: '/todos',
     component: TodoList,
     // loadData: () => loadData('todos'),
-    // test: 'test'
+    task: 'Task' // name for button
   }
 ]
 
 export default routes
-
-// const routes = [{
-//   path: '/',
-//   exact: true,
-//   component: Home,
-//   // title: 'The title'
-// },
-// {
-//   path: '/todos',
-//   component: TodoList,
-//   // loadData: () => loadData('todos'),
-//   // test: 'test'
-// },
-// {
-//   path: '/popular/:id',
-//   component: Grid,
-//   fetchInitialData: (path = '') => fetchPopularRepos(path.split('/').pop())
-// }]
