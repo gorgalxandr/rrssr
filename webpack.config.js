@@ -4,7 +4,7 @@ const nodeExternals = require('webpack-node-externals')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const browser = {
-  mode: 'developemnt',
+  mode: 'development',
   entry: {
     bundle: [
       'babel-polyfill',
@@ -53,18 +53,22 @@ const browser = {
     new webpack.DefinePlugin({
       __isBrowser__: 'true'
     })
-  ]
+  ],
+  resolve: {
+    extensions: ['.js', '.json', '.styl'],
+    mainFields: ['module', 'browser', 'main']
+  },
+  target: 'web'
 }
 
 const server = {
-  mode: 'developemnt',
+  mode: 'development',
   entry: {
     server: [
       'babel-polyfill',
       './src/server/index.js'
     ]
   },
-  target: 'node',
   externals: [nodeExternals()],
   output: {
     path: __dirname,
@@ -100,7 +104,12 @@ const server = {
       filename: './public/styles/[name].css',
       chunkFilename: './public/styles/[id].css'
     })
-  ]
+  ],
+  resolve: {
+    extensions: ['.js', '.json', '.styl'],
+    mainFields: ['module', 'browser', 'main']
+  },
+  target: 'node'
 }
 
 module.exports = [browser, server]

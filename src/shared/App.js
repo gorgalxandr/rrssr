@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import routes from  './routes'
 import { Route, Switch } from 'react-router-dom'
 import Navbar from './Navbar'
 import NoMatch from './NoMatch'
@@ -10,6 +9,8 @@ import Grid from './Grid'
 import TodoList from './TodoList'
 import { fetchPopularRepos } from './api'
 import loadData from './loadData'
+
+import routes from  '../routes'
 
 console.log('[ routes ]', typeof routes)
 console.log('[ routes ]', routes)

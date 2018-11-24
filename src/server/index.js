@@ -7,11 +7,12 @@ import serialize from 'serialize-javascript'
 import App from '../shared/App'
 import Home from '../shared/Home'
 import Grid from '../shared/Grid'
-// import NotFound from './NotFound'
 import TodoList from '../shared/TodoList'
 import { fetchPopularRepos } from '../shared/api'
 import loadData from '../shared/loadData'
-import routes from '../shared/routes'
+
+// routes
+import routes from '../routes'
 
 const app = express()
 

@@ -3,7 +3,7 @@ import { object, string } from 'prop-types'
 import { Link } from 'react-router-dom'
 import image404 from '../../images/404.gif'
 import image500 from '../../images/500.jpg'
-import './notFound.styl'
+import '../styles/notFound'
 
 export default class NotFound extends Component {
   getImg() {

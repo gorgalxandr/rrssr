@@ -1,8 +1,8 @@
-import Home from './Home'
-import Grid from './Grid'
-import TodoList from './TodoList'
-import { fetchPopularRepos } from './api'
-import { loadData } from './loadData'
+import Home from '../shared/Home'
+import Grid from '../shared/Grid'
+import TodoList from '../shared/TodoList'
+import { fetchPopularRepos } from '../shared/api'
+import { loadData } from '../shared/loadData'
 
 const routes =  [
   {
