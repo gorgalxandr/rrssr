@@ -1,8 +1,9 @@
 import Home from '../shared/Home'
 import Grid from '../shared/Grid'
+import Todos from '../shared/Todos'
 import TodoList from '../shared/TodoList'
-import { fetchPopularRepos } from '../shared/api'
-import { loadData } from '../shared/loadData'
+import fetchPopularRepos from '../api'
+import { loadData } from '../api'
 
 const routes =  [
   {
@@ -18,9 +19,10 @@ const routes =  [
   },
   {
     path: '/todos',
-    component: TodoList,
-    // loadData: () => loadData('todos'),
-    task: 'Task' // name for button
+    component: Todos,
+    loadData: () => loadData('todos'),
+    // Button name
+    task: 'Task'
   }
 ]
 

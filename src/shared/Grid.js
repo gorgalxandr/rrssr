@@ -20,26 +20,26 @@ class Grid extends Component {
     this.fetchRepos = this.fetchRepos.bind(this)
   }
 
-  componentDidMount () {
+  componentDidMount() {
     if (!this.state.repos) {
       this.fetchRepos(this.props.match.params.id)
     }
   }
 
-  componentDidUpdate (prevProps, prevState) {
+  componentDidUpdate(prevProps, prevState) {
     if (prevProps.match.params.id !== this.props.match.params.id) {
       this.fetchRepos(this.props.match.params.id)
     }
   }
 
-  fetchRepos (lang) {
+  fetchRepos(lang) {
     this.setState(() => ({
       loading: true
     }))
 
     // Available only on the as prop route method 
     this.props.fetchInitialData(lang)
-      .then((repos) => this.setState(() => ({
+      .then(repos => this.setState(() => ({
         repos,
         loading: false,
       })))
@@ -54,7 +54,12 @@ class Grid extends Component {
 
     return (
       <ul style={{display: 'flex', flexWrap: 'wrap'}}>
-        {repos.map(({ name, owner, stargazers_count, html_url }) => (
+        {repos.map(({
+          name, 
+          owner, 
+          stargazers_count, 
+          html_url 
+        }) => (
           <li key={name} style={{margin: 30}}>
             <ul>
               <li><a href={html_url}>{name}</a></li>

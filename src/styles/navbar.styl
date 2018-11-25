@@ -1,0 +1,104 @@
+.navbar
+  position relative
+  min-height 80px
+  margin-bottom 0
+  border 1px solid transparent
+
+.navbar-fixed-top,
+.navbar-fixed-bottom
+  position fixed
+  right 0
+  left 0
+  z-index 1030
+
+.navbar-fixed-top
+  top 0
+  border-width 0 0 1px
+
+.navbar-highlight-royal-blue
+  color #2D46B9
+
+.navbar
+  border 0
+
+@media (max-width: 991px)
+  .navbar
+    min-height 54px
+
+.navbar-default .navbar-toggle
+  border-color transparent
+
+.navbar-toggle
+  margin-top 9px
+  margin-bottom 9px
+  border 0
+  margin-right -10px
+
+.navbar-toggle
+  position relative
+  float right
+  margin-right 15px
+  padding 9px 10px
+  margin-top 23px
+  margin-bottom 23px
+  background-color transparent
+  background-image none
+  border 1px solid transparent
+  border-radius 4px
+
+.navbar-default .navbar-toggle .icon-bar
+  background-color white
+
+.navbar-toggle .icon-bar
+  -webkit-transform-origin 21px
+  -ms-transform-origin 21px
+  transform-origin 21px
+  -webkit-transition -webkit-transform 0.2s
+  transition -webkit-transform 0.2s
+  transition transform 0.2s
+  transition transform 0.2s, -webkit-transform 0.2s
+  height 3px
+  width 22px
+
+.navbar-toggle .icon-bar
+  display block
+  width 22px
+  height 2px
+  border-radius 1px
+
+.navbar .navbar-header .nav, .navbar .navbar-header .nav-inverse
+  float right
+  margin 0
+
+.nav, .nav-inverse
+  margin-bottom 0
+  padding-left 0
+  list-style none
+
+@media (max-width: 480px) and (max-width: 991px)
+  .navbar-sidepanel .navbar-collapse .navbar-nav li a
+    font-size 30px
+
+@media (max-width: 991px)
+  .navbar-sidepanel .navbar-collapse .navbar-nav li a
+    background transparent
+    cursor pointer
+    font-size 36px
+    font-weight 700
+    line-height 1
+    padding-left 0
+    padding-top 0
+    padding-right 0
+    padding-bottom 25px
+
+@media (max-width: 991px)
+  .navbar-sidepanel .navbar-collapse.open li a
+    opacity 1
+
+@media (max-width: 991px)
+  .navbar-sidepanel .navbar-collapse li a
+    opacity 0
+
+.navbar-default .navbar-nav > li > a
+  color white
+

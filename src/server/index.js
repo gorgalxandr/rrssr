@@ -8,10 +8,12 @@ import App from '../shared/App'
 import Home from '../shared/Home'
 import Grid from '../shared/Grid'
 import TodoList from '../shared/TodoList'
-import { fetchPopularRepos } from '../shared/api'
-import loadData from '../shared/loadData'
+import fetchPopularRepos from '../api'
 
-// routes
+// api(s)
+import { loadData } from '../api'
+
+// route(s)
 import routes from '../routes'
 
 const app = express()
@@ -56,12 +58,12 @@ app.get('*', (req, res, next) => {
         <head>
           <title>SSR with RR</title>
           <link rel='stylesheet' type='text/css' href='/styles/server.css'>
-          <script src="/bundle.js" defer></script>
+          <script src='/bundle.js' defer></script>
           <script>window.__INITIAL_DATA__ = ${serialize(data)}</script>
         </head>
 
         <body>
-          <div id="app">${HTML}</div>
+          <div id='app' class='wrap'>${HTML}</div>
         </body>
 
         <script>
