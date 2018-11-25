@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import TodoList from './TodoList'
+import Loader from './Loader'
 import '../styles/todos'
 
 class Todos extends Component {
@@ -70,11 +71,12 @@ class Todos extends Component {
     const { loading, data } = this.state
 
     if (loading === true) {
-      return <p>LOADING</p>
+      return <Loader/>
     }
 
     return (
       <div className='Todo'>
+        <h1>TODOS</h1>
         <TodoList addItem={this.addItem} />
       </div>
     )

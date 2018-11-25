@@ -44,11 +44,11 @@ class TodoList extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevProps.match.params.id !== this.props.match.params.id) {
+    // if (prevProps.match.params.id !== this.props.match.params.id) {
       // this.fetchData(this.props.match.params.id)
       // console.log('[ componentDidUpdate:this.props.match.params.id ]', this.props.match.params.id)
       console.log('[ TODOLIST ] componentDidUpdate fired')
-    }
+    // }
   }
 
   // fetchData(todos) {

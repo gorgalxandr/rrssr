@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Loader from './Loader'
 
 class Grid extends Component {
   constructor(props) {
@@ -49,7 +50,7 @@ class Grid extends Component {
     const { loading, repos } = this.state
 
     if (loading === true) {
-      return <p>LOADING</p>
+      return <Loader/>
     }
 
     return (

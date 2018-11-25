@@ -1,7 +1,9 @@
 import Home from '../shared/Home'
 import Grid from '../shared/Grid'
 import Todos from '../shared/Todos'
-import TodoList from '../shared/TodoList'
+// import TodoList from '../shared/TodoList'
+
+// api(s)
 import fetchPopularRepos from '../api'
 import { loadData } from '../api'
 
