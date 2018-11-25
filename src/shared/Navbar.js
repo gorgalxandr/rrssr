@@ -6,18 +6,26 @@ export default function Navbar () {
   const languages = [{
     name: 'All',
     param: 'all'
-  }, {
-    name: 'JavaScript',
+  }, 
+  {
+    name: 'JS',
     param: 'javascript',
-  }, {
+  }, 
+  {
     name: 'Ruby',
     param: 'ruby',
-  }, {
+  }, 
+  {
     name: 'Python',
     param: 'python',
-  }, {
+  }, 
+  {
     name: 'Java',
     param: 'java',
+  },
+  {
+    name: 'Typescript',
+    param: 'typescript',
   }]
 
   return (
