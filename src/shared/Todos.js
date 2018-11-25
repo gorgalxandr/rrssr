@@ -76,8 +76,12 @@ class Todos extends Component {
 
     return (
       <div className='Todo'>
-        <h1>TODOS</h1>
-        <TodoList addItem={this.addItem} />
+        <div className='container'>
+          <div className='todo-wrap'>
+            <h1>TODOS</h1>
+            <TodoList addItem={this.addItem} />
+          </div>
+        </div>
       </div>
     )
   }
