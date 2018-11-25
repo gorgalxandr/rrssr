@@ -57,7 +57,10 @@ app.get('*', (req, res, next) => {
       <html>
         <head>
           <title>SSR with RR</title>
-          <link rel='stylesheet' type='text/css' href='/styles/server.css'>
+          ${process.env.NODE_ENV === 'production'
+            ? '<link rel=\'stylesheet\' type=\'text/css\' href=\'/styles/server.css\'>'
+            : ''
+          }
           <script src='/bundle.js' defer></script>
           <script>window.__INITIAL_DATA__ = ${serialize(data)}</script>
         </head>

@@ -15,6 +15,7 @@ import routes from  '../routes'
 
 // style(s)
 import '../styles/App'
+import '../styles/footer'
 
 // log(s)
 console.log('[ routes ]', typeof routes)
@@ -48,12 +49,12 @@ class App extends Component {
               render={props => <NoMatch {...props} />}
             />
           </Switch>
+          <footer className='footer container'>
+            <section className='footer-text'>
+              &copy; {year} All rights reserved.
+            </section>
+          </footer>
         </main>
-        <footer className='footer container'>
-          <span className='footer-text'>
-            &copy; {year} All rights reserved.
-          </span>
-        </footer>
       </div>
     )
   }

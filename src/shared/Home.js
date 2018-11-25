@@ -5,7 +5,11 @@ export default function Home(props) {
   const { title } = props
   return (
     <div className='home'>
-      {title}
+      <div className='hero_txt_wrap'>
+        <span>select</span>
+        <span>a</span>
+        <span>language</span>
+      </div>
     </div>
   )
 }
