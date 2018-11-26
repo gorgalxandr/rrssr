@@ -1,6 +1,11 @@
-import Home from '../shared/Home'
-import Grid from '../shared/Grid'
-import Todos from '../shared/Todos'
+import asyncRoute from '../shared/asyncRoute'
+
+// import Home from '../shared/Home'
+const Home = asyncRoute(() => System.import('../shared/Home'))
+// import Grid from '../shared/Grid'
+const Grid = asyncRoute(() => System.import('../shared/Grid'))
+// import Todos from '../shared/Todos'
+const Todos = asyncRoute(() => System.import('../shared/Todos'))
 // import TodoList from '../shared/TodoList'
 
 // api(s)
@@ -21,6 +26,7 @@ const routes =  [
   },
   {
     path: '/todos',
+    exact: true,
     component: Todos,
     loadData: () => loadData('todos'),
     // Button name
