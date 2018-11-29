@@ -4,10 +4,13 @@ const nodeExternals = require('webpack-node-externals')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const browser = {
-  mode: 'development',
+  mode: process.env.NODE_ENV || 'development',
+  devServer: {
+    contentBase: path.join(__dirname, 'src')
+  },
   entry: {
     bundle: [
-      'babel-polyfill',
+      '@babel/polyfill',
       './src/browser/index.js'
     ]
   },
@@ -20,7 +23,10 @@ const browser = {
     rules: [
       { 
         test: /\.(js)$/,
-        use: 'babel-loader'
+        use: 'babel-loader',
+        // query: {
+        //   presets: ['stage-0']
+        // }
       },
       {
         test: /\.(jpe?g|png|gif|woff|svg|eot|ttf)\??.*$/,
@@ -36,7 +42,7 @@ const browser = {
           : [
             'style-loader',
             'css-loader',
-            'postcss-loader',
+            // 'postcss-loader',
             'stylus-loader'
             // {
             //   loader: 'stylus-loader',
@@ -56,16 +62,16 @@ const browser = {
   ],
   resolve: {
     extensions: ['.js', '.json', '.styl'],
-    mainFields: ['module', 'browser', 'main']
+    // mainFields: ['module', 'browser', 'main']
   },
   target: 'web'
 }
 
 const server = {
-  mode: 'development',
+  mode: process.env.NODE_ENV || 'development',
   entry: {
     server: [
-      'babel-polyfill',
+      '@babel/polyfill',
       './src/server/index.js'
     ]
   },
@@ -80,7 +86,10 @@ const server = {
     rules: [
       { 
         test: /\.(js)$/,
-        use: 'babel-loader'
+        use: 'babel-loader',
+        // query: {
+        //   presets: ['stage-0']
+        // }
       },
       {
         test: /\.(jpe?g|png|gif|woff|svg|eot|ttf)\??.*$/,
@@ -107,7 +116,7 @@ const server = {
   ],
   resolve: {
     extensions: ['.js', '.json', '.styl'],
-    mainFields: ['module', 'browser', 'main']
+    // mainFields: ['module', 'browser', 'main']
   },
   target: 'node'
 }

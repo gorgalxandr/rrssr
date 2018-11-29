@@ -66,7 +66,7 @@ app.get('*', (req, res, next) => {
         </head>
 
         <body>
-          <div id='app' class='wrap'>${HTML}</div>
+          <div id='app' class='fouc wrap'>${HTML}</div>
         </body>
 
         <script>

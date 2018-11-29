@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { func, node } from 'prop-types'
-
 import Loader from './Loader'
+import isClient from '../utils/isClient'
 
 class AsyncImport extends Component {
   static propTypes = {
@@ -14,12 +14,11 @@ class AsyncImport extends Component {
   }
 
   toggleFoucClass() {
-    const root = document.getElementById('app')
-
-    if (root.hasClass('fouc')) {
-      root.removeClass('fouc')
+    // if (isClient && document.body.classList.contains('fouc')) {
+    if (isClient) {
+      document.body.classList.remove('fouc')
     } else {
-      root.addClass('fouc')
+      console.log('Component not usable on server')
     }
   }
 
