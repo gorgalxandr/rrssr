@@ -9,7 +9,7 @@
     "prebuild": "yarn remove-dist && mkdir dist",
     "prestart": "yarn remove-dist",
     "remove-dist": "rimraf ./dist",
-    "start": "npm-run-all build dev watch",
+    "start": "yarn && npm-run-all build dev watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack-dev-server --open"
   },
