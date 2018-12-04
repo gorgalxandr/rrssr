@@ -1,0 +1,15 @@
+See
+
+
+https://github.com/tylermcginnis/rrssr/blob/master/src/shared/App.js
+
+https://github.com/foxhound87/rfx-stack
+
+https://medium.com/@foxhound87/state-management-hydration-with-mobx-we-must-react-ep-05-1922a72453c6
+
+https://github.com/kinotto/react-mobx-ssr-boilerplate/blob/master/src/server/server.js
+
+https://github.com/catc/mobx-react-starter-kit/blob/master/src/index.js
+
+https://github.com/kinotto/react-mobx-ssr-boilerplate/blob/master/src/server/server.js
+
