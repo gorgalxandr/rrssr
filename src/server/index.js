@@ -20,7 +20,7 @@ const app = express()
 
 app.use(cors())
 app.use(express.static('public'))
-
+app.get('/favicon.ico', (req, res) => res.status(204))
 app.get('*', (req, res, next) => {
   const activeRoute = routes.find(route => matchPath(req.url, route)) || {}
   let promise
