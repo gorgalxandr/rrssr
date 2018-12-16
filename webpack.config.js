@@ -17,7 +17,7 @@ const browser = {
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js',
-    publicPath: '/public',
+    publicPath: '/',
   },
   module: {
     rules: [

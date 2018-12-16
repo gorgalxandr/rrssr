@@ -26,16 +26,21 @@ app.get('*', (req, res, next) => {
   const activeRoute = routes.find(route => matchPath(req.url, route)) || {}
   let promise
 
-  promise = activeRoute.loadData
-    ? activeRoute.loadData(req.path)
-    : Promise.resolve()
+  // promise = activeRoute.loadData
+  //   ? activeRoute.loadData(req.path)
+  //   : Promise.resolve()
 
   promise = activeRoute.fetchInitialData
     ? activeRoute.fetchInitialData(req.path)
     : Promise.resolve()
 
+  // console.log(typeof promise)
+  // console.log(promise)
+  console.log(req.path)
+
   promise.then(data => {
     const context = { data }
+    console.log('[ context ]', context)
     const HTML = renderToString(
       <StaticRouter 
         location={req.url} 
