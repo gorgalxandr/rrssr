@@ -1,4 +1,6 @@
+import path from 'path'
 import express from 'express'
+import favicon from 'serve-favicon'
 import cors from 'cors'
 import React from 'react'
 import { renderToString } from 'react-dom/server'
@@ -17,10 +19,9 @@ import { loadData } from '../api'
 import routes from '../routes'
 
 const app = express()
-
 app.use(cors())
 app.use(express.static('public'))
-app.get('/favicon.ico', (req, res) => res.status(204))
+app.use(favicon(path.resolve('public', 'favicon.ico')))
 app.get('*', (req, res, next) => {
   const activeRoute = routes.find(route => matchPath(req.url, route)) || {}
   let promise

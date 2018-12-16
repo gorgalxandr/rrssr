@@ -6,7 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const browser = {
   mode: process.env.NODE_ENV || 'development',
   devServer: {
-    contentBase: path.join(__dirname, 'src')
+    contentBase: path.resolve(__dirname, 'src')
   },
   entry: {
     bundle: [
@@ -17,7 +17,7 @@ const browser = {
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js',
-    publicPath: '/',
+    publicPath: '/public',
   },
   module: {
     rules: [
@@ -29,11 +29,16 @@ const browser = {
         // }
       },
       {
-        test: /\.(jpe?g|png|gif|woff|svg|eot|ttf)\??.*$/,
+        test: /\.(jpe?g|png|gif)\??.*$/,
         loader: 'url-loader',
         options: {
-          limit: 8192
+          limit: 1000,
+          name: 'images/[hash].[ext]'
         }
+      },
+      {
+        test: /\.(ttf|eot|woff|woff2|svg)$/,
+        loader: "url-loader?limit=50000&name=fonts/[hash].[ext]"
       },
       {
         test: /(\.css|\.styl)$/,
@@ -51,7 +56,7 @@ const browser = {
             //   }
             // }
         ],
-        exclude: path.resolve(__dirname, './node_modules')
+        exclude: path.resolve(__dirname, 'node_modules')
       }
     ]
   },
@@ -79,7 +84,7 @@ const server = {
   output: {
     path: __dirname,
     filename: './dist/server.js',
-    publicPath: '/',
+    publicPath: '/public',
     libraryTarget: 'commonjs2'
   },
   module: {
@@ -92,11 +97,16 @@ const server = {
         // }
       },
       {
-        test: /\.(jpe?g|png|gif|woff|svg|eot|ttf)\??.*$/,
+        test: /\.(jpe?g|png|gif)\??.*$/,
         loader: 'url-loader',
         options: {
-          limit: 8192
+          limit: 1000,
+          name: 'public/images/[hash].[ext]'
         }
+      },
+      {
+        test: /\.(ttf|eot|woff|woff2|svg)$/,
+        loader: "url-loader?limit=50000&name=fonts/[hash].[ext]"
       },
       {
         test: /(\.css|\.styl)$/,

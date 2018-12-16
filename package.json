@@ -4,11 +4,11 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode development --debug",
+    "clean": "rimraf ./dist && rimraf ./public/*.js && rimraf ./public/styles/*.css && rimraf ./public/images/*",
     "watch": "webpack --mode development --debug -w",
-    "dev": "NODE_ENV=development nodemon --inspect=9220 ./dist/server.js",
-    "prebuild": "yarn remove-dist && mkdir dist",
-    "prestart": "yarn remove-dist",
-    "remove-dist": "rimraf ./dist",
+    "dev": "NODE_ENV=development nodemon --inspect-brk=9220 ./dist/server.js",
+    "prebuild": "yarn clean && mkdir dist",
+    "prestart": "yarn clean",
     "start": "yarn && npm-run-all build dev watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack-dev-server --open"
@@ -56,6 +56,7 @@
     "react-dom": "^16.6.3",
     "react-router-dom": "^4.3.1",
     "serialize-javascript": "^1.5.0",
+    "serve-favicon": "^2.5.0",
     "style-loader": "^0.23.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
