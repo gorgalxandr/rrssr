@@ -9,8 +9,8 @@ const Todos = asyncRoute(() => import('../shared/Todos'))
 // import TodoList from '../shared/TodoList'
 
 // api(s)
-import fetchPopularRepos from '../api'
-import { loadData } from '../api'
+import fetchPopularRepos,  { loadData }  from '../api'
+// import { loadData } from '../api'
 
 const routes =  [
   {
