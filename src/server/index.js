@@ -1,22 +1,42 @@
 import path from 'path'
 import express from 'express'
+import mcache from 'memory-cache'
 import favicon from 'serve-favicon'
 import cors from 'cors'
 import React from 'react'
-import { renderToString } from 'react-dom/server'
+import { renderToString, renderToStaticNodeStream, renderToStaticMarkup } from 'react-dom/server'
 import { StaticRouter, matchPath } from 'react-router-dom'
 import serialize from 'serialize-javascript'
+import fetchPopularRepos from '../api'
+import Footer from '../shared/Footer'
 import App from '../shared/App'
 import Home from '../shared/Home'
 import Grid from '../shared/Grid'
 import TodoList from '../shared/TodoList'
-import fetchPopularRepos from '../api'
 
 // api(s)
 import { loadData } from '../api'
 
 // route(s)
 import routes from '../routes'
+
+const cache = (duration) => {
+  return (req, res, next) => {
+    let key = '__express__' + req.originalUrl || req.url
+    let cachedBody = mcache.get(key)
+    if (cachedBody) {
+      res.send(cachedBody)
+      return
+    } else {
+      res.sendResponse = res.send
+      res.send = (body) => {
+        mcache.put(key, body, duration * 1000);
+        res.sendResponse(body)
+      }
+      next()
+    }
+  }
+}
 
 const app = express()
 app.use(cors())
@@ -34,20 +54,18 @@ app.get('*', (req, res, next) => {
     ? activeRoute.fetchInitialData(req.path)
     : Promise.resolve()
 
-  // console.log(typeof promise)
-  // console.log(promise)
-  console.log(req.path)
-
   promise.then(data => {
     const context = { data }
-    console.log('[ context ]', context)
-    const HTML = renderToString(
-      <StaticRouter 
-        location={req.url} 
-        context={context}
-      >
-        <App />
-      </StaticRouter>
+    const FOOTER = renderToStaticMarkup(<Footer/>)
+    const APP = renderToString(
+      <div>
+        <StaticRouter 
+          location={req.url} 
+          context={context}
+        >
+          <App />
+        </StaticRouter>
+      </div>
     )
 
     if (context.status === 404) {
@@ -57,6 +75,8 @@ app.get('*', (req, res, next) => {
     if (context.url) {
       return res.redirect(301, context.url)
     }
+
+    const store = serialize(data)
 
     res.send(`
       <!DOCTYPE html>
@@ -68,16 +88,12 @@ app.get('*', (req, res, next) => {
             : ''
           }
           <script src='/bundle.js' defer></script>
-          <script>window.__INITIAL_DATA__ = ${serialize(data)}</script>
+          <script>window.__INITIAL_DATA__ = ${store}</script>
         </head>
-
         <body>
-          <div id='app' class='fouc wrap'>${HTML}</div>
+          <div id='app'>${APP}</div>
+          ${FOOTER}
         </body>
-
-        <script>
-          console.log('[ DATA: APP_STORE ]', ${serialize(data)});
-        </script>
       </html>
     `)
   }).catch(next)

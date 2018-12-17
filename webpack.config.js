@@ -121,7 +121,8 @@ const server = {
     }),
     new MiniCssExtractPlugin({
       filename: './public/styles/[name].css',
-      chunkFilename: './public/styles/[id].css'
+      chunkFilename: './public/styles/[id].css',
+      allChunks:true
     })
   ],
   resolve: {

@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, Redirect } from 'react-router-dom'
 import Navbar from './Navbar'
 import NoMatch from './NoMatch'
 import NotFound from './NotFound'
 import Home from './Home'
-import Grid from './Grid'
+// import Grid from './Grid'
 import TodoList from './TodoList'
 
 // api(s)
@@ -15,21 +15,18 @@ import routes from  '../routes'
 
 // style(s)
 import '../styles/App'
+import '../styles/header'
 import '../styles/footer'
 
 // log(s)
-console.log('[ routes ]', typeof routes)
+// console.log('[ routes ]', typeof routes)
 console.log('[ routes ]', routes)
-
 
 class App extends Component {
   render() {
-    const d = new Date()
-    const year = d.getFullYear()
-
     return (
       <div className='App'>
-        <Navbar />
+       <Navbar />
         <main>
           <Switch>
             {routes.map(({ 
@@ -49,11 +46,6 @@ class App extends Component {
               render={props => <NoMatch {...props} />}
             />
           </Switch>
-          <footer className='footer container'>
-            <section className='footer-text'>
-              &copy; {year} All rights reserved.
-            </section>
-          </footer>
         </main>
       </div>
     )
