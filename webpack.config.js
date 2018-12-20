@@ -4,6 +4,7 @@ const nodeExternals = require('webpack-node-externals')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const browser = {
+  devtool: 'source-map',
   mode: process.env.NODE_ENV || 'development',
   devServer: {
     contentBase: path.resolve(__dirname, 'src')
@@ -73,6 +74,7 @@ const browser = {
 }
 
 const server = {
+  devtool: 'source-map',
   mode: process.env.NODE_ENV || 'development',
   entry: {
     server: [

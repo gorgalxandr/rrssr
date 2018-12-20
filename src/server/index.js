@@ -7,12 +7,16 @@ import React from 'react'
 import { renderToString, renderToStaticNodeStream, renderToStaticMarkup } from 'react-dom/server'
 import { StaticRouter, matchPath } from 'react-router-dom'
 import serialize from 'serialize-javascript'
-import fetchPopularRepos from '../api'
+// import fetchPopularRepos from '../api'
 import Footer from '../shared/Footer'
+import '../styles/footer'
 import App from '../shared/App'
-import Home from '../shared/Home'
-import Grid from '../shared/Grid'
-import TodoList from '../shared/TodoList'
+// import Home from '../shared/Home'
+// import Grid from '../shared/Grid'
+// import TodoList from '../shared/TodoList'
+
+// render engine
+import renderer from '../utils/renderer'
 
 // api(s)
 import { loadData } from '../api'
@@ -44,18 +48,23 @@ app.use(express.static('public'))
 app.use(favicon(path.resolve('public', 'favicon.ico')))
 app.get('*', (req, res, next) => {
   const activeRoute = routes.find(route => matchPath(req.url, route)) || {}
+  let baseContext = {
+    locale: 'us',
+    theme: 'base_theme'
+
+  }
   let promise
 
   // promise = activeRoute.loadData
   //   ? activeRoute.loadData(req.path)
   //   : Promise.resolve()
 
-  promise = activeRoute.fetchInitialData
+  promise = req.path !== '/'
     ? activeRoute.fetchInitialData(req.path)
     : Promise.resolve()
 
   promise.then(data => {
-    const context = { data }
+    const context = data ? { ...data, ...baseContext } : { ...baseContext }
     const FOOTER = renderToStaticMarkup(<Footer/>)
     const APP = renderToString(
       <div>
@@ -76,7 +85,7 @@ app.get('*', (req, res, next) => {
       return res.redirect(301, context.url)
     }
 
-    const store = serialize(data)
+    const store = data ? serialize(data) : { ...data, ...baseContext }
 
     res.send(`
       <!DOCTYPE html>
@@ -89,8 +98,13 @@ app.get('*', (req, res, next) => {
           }
           <script src='/bundle.js' defer></script>
           <script>window.__INITIAL_DATA__ = ${store}</script>
+          <style>
+            body {
+              margin: 0
+            }
+          </style>
         </head>
-        <body>
+        <body class='fouc'>
           <div id='app'>${APP}</div>
           ${FOOTER}
         </body>

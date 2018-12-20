@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom'
 import Navbar from './Navbar'
 import NoMatch from './NoMatch'
-import NotFound from './NotFound'
-import Home from './Home'
+// import NotFound from './NotFound'
+// import Home from './Home'
 // import Grid from './Grid'
-import TodoList from './TodoList'
+// import TodoList from './TodoList'
 
 // api(s)
 import fetchPopularRepos, { loadData } from '../api'

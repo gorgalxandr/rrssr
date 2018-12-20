@@ -14,8 +14,8 @@ class AsyncImport extends Component {
   }
 
   toggleFoucClass() {
-    // if (isClient && document.body.classList.contains('fouc')) {
-    if (isClient) {
+    if (isClient && document.body.classList.contains('fouc')) {
+    // if (isClient()) {
       document.body.classList.remove('fouc')
     } else {
       console.log('Component not usable on server')

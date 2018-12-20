@@ -7,10 +7,12 @@ export default function Footer(props) {
 
   return (
     <footer className='footer'>
-      <section classNake='container'>
-        <span className='footer-text'>
-          &copy; { year } All rights reserved.
-        </span>
+      <section className='container'>
+        <div className='copyright'>
+          <div className='footer-text'>
+            &copy;{ year } All rights reserved.
+          </div>
+        </div>
       </section>
     </footer>
   )

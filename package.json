@@ -3,15 +3,16 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode development --debug",
+    "build": "webpack --mode development",
     "clean": "rimraf ./dist && rimraf ./public/*.js && rimraf ./public/styles/*.css && rimraf ./public/images/*",
     "watch": "webpack --mode development --debug -w",
-    "dev": "NODE_ENV=development nodemon --inspect-brk=9220 ./dist/server.js",
+    "dev": "NODE_ENV=development nodemon --inspect=9220 ./dist/server.js",
+    "dev:debug": "NODE_ENV=development nodemon --inspect-brk=9220 ./dist/server.js",
     "prebuild": "yarn clean && mkdir dist",
     "prestart": "yarn clean",
-    "start": "yarn && npm-run-all build dev watch",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack-dev-server --open"
+    "start": "yarn && npm-run-all build dev",
+    "test": "jest",
+    "webpackDevServer": "webpack-dev-server --open"
   },
   "author": "",
   "license": "MIT",
