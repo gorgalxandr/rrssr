@@ -36,8 +36,11 @@ class Grid extends Component {
 
   fetchRepos(lang) {
     this.setState(() => ({
-      loading: true
+      loading: true,
+      // lang: repos.langs[lang] ? repos.langs.push(lang) : console.log(`Making a new object @REPOS > LANGS > ${LANG}`)
     }))
+
+
 
     // Available only on the as prop route method 
     this.props.fetchInitialData(lang)
