@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import TodoList from './TodoList'
 import Loader from './Loader'
-import '../styles/todos'
+import '../styles/pages/todos'
+import '../styles/pages/todoList'
 
 class Todos extends Component {
   constructor(props) {

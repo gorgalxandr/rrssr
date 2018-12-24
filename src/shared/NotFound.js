@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import { object, string } from 'prop-types'
 import { Link } from 'react-router-dom'
+
+// assests
 import image404 from '../../images/404.gif'
 import image500 from '../../images/500.jpg'
-import '../styles/notFound'
+import '../styles/pags/notFound'
 
 export default class NotFound extends Component {
   getImg() {

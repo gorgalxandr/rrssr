@@ -1,0 +1,92 @@
+/* Import Variables */
+@import 'variables'
+
+/*************************************************************************/
+/* Standard button styles to be extended off of */
+$standard-flyout
+  display:         inline-block;
+  font-size:       rem($globalFontSize);
+  line-height:     getLineHeight(@font-size);
+  text-decoration: none;
+  cursor:          pointer;
+
+/*************************************************************************/
+/* Base HTML button element Styles */
+.{$prefix}-flyout
+  display:  inline-block;
+  position: relative;
+  z-index:  $z0;
+  &:not([disabled]):not(.disabled):hover
+    .{$prefix}-flyout-options
+      opacity: 1;
+      visibility: visible;
+      transform: translate(0, 0);
+  &:disabled
+  &.disabled
+    opacity: .5;
+    .{$prefix}-flyout-btn
+      cursor: default;
+  
+.{$prefix}-flyout-btn
+  @extend   $standard-flyout;
+  // width 100%
+  position: relative;
+  z-index:  $z0;
+  {$flyoutBtnPadding};
+  &:after
+    font-family: $globalGlyphFontFamily;
+    content:    '\E114'
+    font-size:  10px;
+    position:   absolute;
+    top:        50%;
+    right:      16px;
+    transform: translate(0, -50%);
+
+.{$prefix}-flyout-span
+  margin-left: 4px;
+  color: lighten($black, 40%);
+  vertical-align: top;
+  &-num  
+    margin-left: 4px;
+    color: lighten($black, 40%);
+    vertical-align: top;
+    &:before
+      content: "("
+    &:after
+      content: ")"
+    
+.{$prefix}-flyout-options
+  opacity:    0;
+  visibility: hidden;
+  position:   absolute;
+  z-index: $z1
+  left: 0;
+  right: 0;
+  background: darken($white, 5.5%);
+  // max-height: 272px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  $pref = "right", "bottom", "left";
+  box-shadow: createBorder($pref, $lightGrey);
+  transform: translate(0, -20%);
+  transition: all .15s ease;
+  backface-visibility: hidden;
+  
+  .{$prefix}-option
+    @extend $standard-flyout
+    width: 100%;
+    color: $black
+    background: transparent;
+    box-shadow: createBorder(top, $lightGrey);
+    &:first-child
+      box-shadow: none;
+    &:hover
+      background: darken($lightGrey, 2.5%);
+      color: $black;
+    &:active
+    &.active
+      background: $black;
+      color:      $white;
+      text-decoration: none;
+      box-shadow: createBorder(top, $black);
+    

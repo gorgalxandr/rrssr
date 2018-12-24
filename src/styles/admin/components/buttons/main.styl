@@ -1,0 +1,65 @@
+/*************************************************************************/
+/* Import Variables */
+@import 'variables'
+
+/*************************************************************************/
+/* Standard button styles to be extended off of */
+$standard-btn
+  display:         inline-block;
+  vertical-align:  top;
+  white-space:     nowrap;
+  text-align:      center;
+  text-decoration: none;
+  background:      transparent;
+  cursor:          pointer;
+  transition: all .2s ease;
+
+/*************************************************************************/
+/* Base HTML button element Styles */
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"]
+  font-size: inherit;
+  line-height: inherit;
+  border:  none;
+  outline: 0;
+  cursor:   pointer;
+  overflow: visible;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-appearance: none;
+  &::-moz-focus-inner
+    border:        0;
+    padding:       0;
+    margin-top:    0;
+    margin-bottom: 0;
+
+[class*={$prefix}-btn]
+  @extend $standard-btn;
+  &:disabled
+  &.disabled
+    opacity: .5;
+    cursor: default;
+  
+.{$prefix}-btn
+  for c in $colorArray
+    &-{c[0]}
+      if luminosity(c[1]) > .5
+        color: rgba($black, 1);
+      else
+        color: rgba($white, 1);
+      background: rgba(c[1], 1);
+      &:not([disabled]):not(.disabled):hover
+        background: rgba(c[1], .75);
+  
+          
+    &-border-{c[0]}
+      color: rgba($black, 1);
+      background: transparent;
+      box-shadow: createBorder(all, c[1]);
+      &:not([disabled]):not(.disabled):hover
+        background: rgba($grey, .5);
+          
+/*************************************************************************/
+/* Imports */
+@import 'flyout/main'

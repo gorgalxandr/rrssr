@@ -1,0 +1,101 @@
+/* This {fonts|glypgs} could be moved to
+   main.styl | brand-master.styl | master.styl.
+
+   Imported here as it logically has to do with typography.
+*/
+
+@import fonts
+@import glyphs
+
+
+/*************************************************************************/
+/* Create font classes */
+/* Base font  */
+.{$prefix}-base
+  font-family: $globalBaseFontFamily;
+  font-weight: normal;
+
+/* Platform font */
+.{$prefix}-brand
+  font-family: $globalBrandFontFamily;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+/*************************************************************************/
+/* Heading tags - Deprecated  */
+
+// '[heading]' [font-size]
+$headingArray = 'h1' 2.85, 'h2' 2.42, 'h3' 2, 'h4' 1.14, 'h5' 1.14, 'h6' 1;
+
+for h in $headingArray
+  $headingFontSize = rem(ceil($globalFontSize * h[1]));
+  {h[0]},
+  .{h[0]}
+    font-size: $headingFontSize;
+    line-height: getLineHeight(@font-size);
+  .lh-{h[0]}
+    line-height: unit(($headingFontSize - 2) / $headingFontSize, '');
+
+/*************************************************************************/
+/* Paragraph tags */
+p,
+.p
+  font-family: $globalBaseFontFamily;
+  line-height: getLineHeight($globalFontSize);
+
+small,
+.small
+  font-family: $globalBaseFontFamily;
+  font-size: rem(ceil($globalFontSize - 2))
+  line-height: getLineHeight(@font-size);
+
+/*************************************************************************/
+/* Font Sizes */
+
+$fs = 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40;
+
+/* Font Size for Mobile */
+for f in $fs
+  .fs{f}-sm
+    font-size: unit(f, 'px')
+    line-height: getLineHeight(@font-size);
+  .lh{f}-sm
+    line-height: unit((f + 4) / f, '')
+
+/* Font Size for Tablet */
+@media $tablet
+  for f in $fs
+    .fs{f}-md
+      font-size: unit(f, 'px')
+      line-height: getLineHeight(@font-size);
+    .lh{f}-md
+      line-height: unit((f + 4) / f, '')
+
+/* Font Size for Desktop */
+@media $desktop
+  for f in $fs
+    .fs{f}-lg
+      font-size: unit(f, 'px')
+      line-height: getLineHeight(@font-size);
+    .lh{f}-lg
+      line-height: unit((f + 4) / f, '')
+
+/* Font Size for Large Desktop */
+@media $largeDesktop
+  for f in $fs
+    .fs{f}-xl
+      font-size: unit(f, 'px')
+      line-height: getLineHeight(@font-size);
+    .lh{f}-xl
+      line-height: unit((f + 4) / f, '')
+
+/* Font Size for Extra Large Desktop */
+@media $extraLargeDesktop
+  for f in $fs
+    .fs{f}-xxl
+      font-size: unit(f, 'px')
+      line-height: getLineHeight(@font-size);
+    .lh{f}-xxl
+      line-height: unit((f + 4) / f, '')

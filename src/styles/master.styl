@@ -1,0 +1,31 @@
+/*
+   More work will be done to streamline code to use PostCSS with
+   autoprefixer [https://github.com/postcss/autoprefixer] to target
+   specific browsers.
+*/
+
+/*-----------------------------------*/
+/*--------->>> SETTINGS <<<----------*/
+/*-----------------------------------*/
+
+@import 'variables'
+
+@import 'global/reset'
+@import 'global/mixins'
+@import 'global/media-queries'
+
+@import 'admin/brand-master'
+  /*
+    brand-master:
+      @import local/variables.desktop
+      @import local/variables.mobile
+      @import local/typography
+      @import local/main
+      @import components/buttons/margin
+      @import components/forms/main
+      @import components/toggle/main
+  */
+
+@import 'layout/grid'
+@import 'global/utilities'
+@import 'global/colors'

@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink, withRouter } from 'react-router-dom'
-import '../styles/navbar'
+import '../styles/layout/navbar'
 
 export default function Navbar () {
   const languages = [{

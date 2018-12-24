@@ -1,0 +1,34 @@
+/*************************************************************************/
+/* Base */
+*
+  box-sizing: border-box;
+  &:before
+  &:after
+    box-sizing: inherit;
+
+/* HTML */
+html
+  font-size: rem($globalFontSize);
+  line-height: getLineHeight($globalFontSize);
+  -webkit-text-size-adjust: none;
+
+/* Body */
+body
+  font-size: inherit;
+  line-height: inherit;
+  font-family: $globalBaseFontFamily;
+  color: $globalBaseTextColor;
+  background-color: $globalBaseBackgroundColor;
+
+/* Anchors */
+a
+  color: $black;
+  cursor: pointer;
+  text-decoration: none;
+  &:not([class*={$prefix}-btn]).disabled
+    color: rgba($black, .4)
+    text-decoration: line-through;
+
+/* Images */
+img
+  max-width: 100%;

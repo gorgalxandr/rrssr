@@ -1,0 +1,36 @@
+/*************************************************************************/
+/* Import Variables */
+@import 'variables'
+
+/*************************************************************************/
+/* Standard button styles to be extended off of */
+$standard-toggle-item-label
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all .2s ease;
+
+/*************************************************************************/
+/* Base HTML toggle element Styles */
+.{$prefix}-toggle
+    font-size:  0;
+    display: inline-block;
+    background: $white;
+    white-space: nowrap;
+
+    &-item
+      display: inline-block;
+      font-size: rem($globalFontSize);
+      line-height: getLineHeight(@font-size);
+
+      .{$prefix}-label
+        @extend $standard-toggle-item-label;
+        background: rgba($black, 0)
+        &:hover
+          background: rgba($grey, .5)
+
+      .{$prefix}-radio
+        display: none;
+        &:checked + label
+          color: $white;
+          background: rgba($black, 1)

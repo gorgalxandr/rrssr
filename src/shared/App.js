@@ -14,9 +14,9 @@ import fetchPopularRepos, { loadData } from '../api'
 import routes from  '../routes'
 
 // style(s)
-import '../styles/App'
-import '../styles/header'
-import '../styles/footer'
+import '../styles/app'
+import '../styles/layout/header'
+import '../styles/layout/footer'
 
 // log(s)
 // console.log('[ routes ]', typeof routes)

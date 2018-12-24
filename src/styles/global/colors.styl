@@ -1,0 +1,286 @@
+/*************************************************************************/
+/* Color Creation */
+/* Text colors */
+for item in $colorArray
+  .text-color-{item[0]}
+    color: item[1]
+
+/* Background colors */
+for item in $colorArray
+  .bg-{item[0]}
+    background: item[1]
+
+/* Border colors */
+for item in $colorArray
+  .border
+    &-top-{item[0]}
+      box-shadow: createBorder(top, item[1])
+    &-right-{item[0]}
+      box-shadow: createBorder(right, item[1])
+    &-bottom-{item[0]}
+      box-shadow: createBorder(bottom, item[1])
+    &-left-{item[0]}
+      box-shadow: createBorder(left, item[1])
+    &-{item[0]}
+      box-shadow: createBorder(all, item[1])
+
+// .text-color-black
+//   color: $black
+
+// .text-color-white
+//   color: $white
+
+// .text-color-offwhite
+//   color: $offwhite
+
+// .text-color-grey
+//   color: $grey
+
+// .text-color-dark-grey
+//   color: $darkGrey
+
+// .text-color-light-grey
+//   color: $lightGrey
+
+// .text-color-medium-grey
+//   color: $mediumGrey
+
+// .text-color-accent
+//   color: $accent
+
+// .text-color-error
+//   color: $error
+
+// .text-color-success
+//   color: $success
+
+// .bg-black
+//   background: $black
+
+// .bg-white
+//   background: $white
+
+// .bg-offwhite
+//   background: $offwhite
+
+// .bg-grey
+//   background: $grey
+
+// .bg-dark-grey
+//   background: $darkGrey
+
+// .bg-light-grey
+//   background: $lightGrey
+
+// .bg-medium-grey
+//   background: $mediumGrey
+
+// .bg-accent
+//   background: $accent
+
+// .bg-error
+//   background: $error
+
+// .bg-success
+//   background: $success
+
+// .border-top-black
+//   -webkit-box-shadow: inset 0 1px 0 0 $black
+//   box-shadow: inset 0 1px 0 0 $black
+
+// .border-right-black
+//   -webkit-box-shadow: inset -1px 0 0 0 $black
+//   box-shadow: inset -1px 0 0 0 $black
+
+// .border-bottom-black
+//   -webkit-box-shadow: inset 0 -1px 0 0 $black
+//   box-shadow: inset 0 -1px 0 0 $black
+
+// .border-left-black
+//   -webkit-box-shadow: inset 1px 0 0 0 $black
+//   box-shadow: inset 1px 0 0 0 $black
+
+// .border-black
+//   -webkit-box-shadow: inset 0 0 0 1px $black
+//   box-shadow: inset 0 0 0 1px $black
+
+// .border-top-white
+//   -webkit-box-shadow: inset 0 1px 0 0 $white
+//   box-shadow: inset 0 1px 0 0 $white
+
+// .border-right-white
+//   -webkit-box-shadow: inset -1px 0 0 0 $white
+//   box-shadow: inset -1px 0 0 0 $white
+
+// .border-bottom-white
+//   -webkit-box-shadow: inset 0 -1px 0 0 $white
+//   box-shadow: inset 0 -1px 0 0 $white
+
+// .border-left-white
+//   -webkit-box-shadow: inset 1px 0 0 0 $white
+//   box-shadow: inset 1px 0 0 0 $white
+
+// .border-white
+//   -webkit-box-shadow: inset 0 0 0 1px $white
+//   box-shadow: inset 0 0 0 1px $white
+
+// .border-top-offwhite
+//   -webkit-box-shadow: inset 0 1px 0 0 $offwhite
+//   box-shadow: inset 0 1px 0 0 $offwhite
+
+// .border-right-offwhite
+//   -webkit-box-shadow: inset -1px 0 0 0 $offwhite
+//   box-shadow: inset -1px 0 0 0 $offwhite
+
+// .border-bottom-offwhite
+//   -webkit-box-shadow: inset 0 -1px 0 0 $offwhite
+//   box-shadow: inset 0 -1px 0 0 $offwhite
+
+// .border-left-offwhite
+//   -webkit-box-shadow: inset 1px 0 0 0 $offwhite
+//   box-shadow: inset 1px 0 0 0 #f7f7f7
+
+// .border-offwhite
+//   -webkit-box-shadow: inset 0 0 0 1px $offwhite
+//   box-shadow: inset 0 0 0 1px #f7f7f7
+
+// .border-top-grey
+//   -webkit-box-shadow: inset 0 1px 0 0 #8d8d8d;
+//   box-shadow: inset 0 1px 0 0 #8d8d8d
+
+// .border-right-grey
+//   -webkit-box-shadow: inset -1px 0 0 0 #8d8d8d;
+//   box-shadow: inset -1px 0 0 0 #8d8d8d
+
+// .border-bottom-grey
+//   -webkit-box-shadow: inset 0 -1px 0 0 #8d8d8d;
+//   box-shadow: inset 0 -1px 0 0 #8d8d8d
+
+// .border-left-grey
+//   -webkit-box-shadow: inset 1px 0 0 0 #8d8d8d;
+//   box-shadow: inset 1px 0 0 0 #8d8d8d
+
+// .border-grey
+//   -webkit-box-shadow: inset 0 0 0 1px #8d8d8d;
+//   box-shadow: inset 0 0 0 1px #8d8d8d
+
+// .border-top-dark-grey
+//   -webkit-box-shadow: inset 0 1px 0 0 #222;
+//   box-shadow: inset 0 1px 0 0 #222
+
+// .border-right-dark-grey
+//   -webkit-box-shadow: inset -1px 0 0 0 #222;
+//   box-shadow: inset -1px 0 0 0 #222
+
+// .border-bottom-dark-grey
+//   -webkit-box-shadow: inset 0 -1px 0 0 #222;
+//   box-shadow: inset 0 -1px 0 0 #222
+
+// .border-left-dark-grey
+//   -webkit-box-shadow: inset 1px 0 0 0 #222;
+//   box-shadow: inset 1px 0 0 0 #222
+
+// .border-dark-grey
+//   -webkit-box-shadow: inset 0 0 0 1px #222;
+//   box-shadow: inset 0 0 0 1px #222
+
+// .border-top-light-grey
+//   -webkit-box-shadow: inset 0 1px 0 0 #e5e5e5;
+//   box-shadow: inset 0 1px 0 0 #e5e5e5
+
+// .border-right-light-grey
+//   -webkit-box-shadow: inset -1px 0 0 0 #e5e5e5;
+//   box-shadow: inset -1px 0 0 0 #e5e5e5
+
+// .border-bottom-light-grey
+//   -webkit-box-shadow: inset 0 -1px 0 0 #e5e5e5;
+//   box-shadow: inset 0 -1px 0 0 #e5e5e5
+
+// .border-left-light-grey
+//   -webkit-box-shadow: inset 1px 0 0 0 #e5e5e5;
+//   box-shadow: inset 1px 0 0 0 #e5e5e5
+
+// .border-light-grey
+//   -webkit-box-shadow: inset 0 0 0 1px #e5e5e5;
+//   box-shadow: inset 0 0 0 1px #e5e5e5
+
+// .border-top-medium-grey
+//   -webkit-box-shadow: inset 0 1px 0 0 #ddd;
+//   box-shadow: inset 0 1px 0 0 #ddd
+
+// .border-right-medium-grey
+//   -webkit-box-shadow: inset -1px 0 0 0 #ddd;
+//   box-shadow: inset -1px 0 0 0 #ddd
+
+// .border-bottom-medium-grey
+//   -webkit-box-shadow: inset 0 -1px 0 0 #ddd;
+//   box-shadow: inset 0 -1px 0 0 #ddd
+
+// .border-left-medium-grey
+//   -webkit-box-shadow: inset 1px 0 0 0 #ddd;
+//   box-shadow: inset 1px 0 0 0 #ddd
+
+// .border-medium-grey
+//   -webkit-box-shadow: inset 0 0 0 1px #ddd;
+//   box-shadow: inset 0 0 0 1px #ddd
+
+// .border-top-accent
+//   -webkit-box-shadow: inset 0 1px 0 0 #3498db;
+//   box-shadow: inset 0 1px 0 0 #3498db
+
+// .border-right-accent
+//   -webkit-box-shadow: inset -1px 0 0 0 #3498db;
+//   box-shadow: inset -1px 0 0 0 #3498db
+
+// .border-bottom-accent
+//   -webkit-box-shadow: inset 0 -1px 0 0 #3498db;
+//   box-shadow: inset 0 -1px 0 0 #3498db
+
+// .border-left-accent
+//   -webkit-box-shadow: inset 1px 0 0 0 #3498db;
+//   box-shadow: inset 1px 0 0 0 #3498db
+
+// .border-accent
+//   -webkit-box-shadow: inset 0 0 0 1px #3498db;
+//   box-shadow: inset 0 0 0 1px #3498db
+
+// .border-top-error
+//   -webkit-box-shadow: inset 0 1px 0 0 #fe0000;
+//   box-shadow: inset 0 1px 0 0 #fe0000
+
+// .border-right-error
+//   -webkit-box-shadow: inset -1px 0 0 0 #fe0000;
+//   box-shadow: inset -1px 0 0 0 #fe0000
+
+// .border-bottom-error
+//   -webkit-box-shadow: inset 0 -1px 0 0 #fe0000;
+//   box-shadow: inset 0 -1px 0 0 #fe0000
+
+// .border-left-error
+//   -webkit-box-shadow: inset 1px 0 0 0 #fe0000;
+//   box-shadow: inset 1px 0 0 0 #fe0000
+
+// .border-error
+//   -webkit-box-shadow: inset 0 0 0 1px #fe0000;
+//   box-shadow: inset 0 0 0 1px #fe0000
+
+// .border-top-success
+//   -webkit-box-shadow: inset 0 1px 0 0 #48bd1f;
+//   box-shadow: inset 0 1px 0 0 #48bd1f
+
+// .border-right-success
+//   -webkit-box-shadow: inset -1px 0 0 0 #48bd1f;
+//   box-shadow: inset -1px 0 0 0 #48bd1f
+
+// .border-bottom-success
+//   -webkit-box-shadow: inset 0 -1px 0 0 #48bd1f;
+//   box-shadow: inset 0 -1px 0 0 #48bd1f
+
+// .border-left-success
+//   -webkit-box-shadow: inset 1px 0 0 0 #48bd1f;
+//   box-shadow: inset 1px 0 0 0 #48bd1f
+
+// .border-success
+//   -webkit-box-shadow: inset 0 0 0 1px #48bd1f;
+//   box-shadow: inset 0 0 0 1px #48bd1f
+

@@ -1,68 +1,70 @@
-html
-  font-family sans-serif
-  -ms-text-size-adjust 100%
-  -webkit-text-size-adjust 100%
-  font-size 10px
-  -webkit-tap-highlight-color rgba(0, 0, 0, 0)
+@import 'master.styl'
 
-body
-  font-family Helvetica, Arial, sans-serif
-  font-size 16px
-  line-height 1.5
-  color #222326
-  background-color #b70e0e 
-  font-weight 400
-  min-height 100vh
-  display -moz-flex
-  display -ms-flexbox
-  display -ms-flex
-  display -webkit-box
-  display flex
-  -moz-flex-direction column
-  -ms-flex-direction column
-  -webkit-box-orient vertical
-  -webkit-box-direction normal
-  flex-direction column
-  margin 0
+// html
+//   font-family sans-serif
+//   -ms-text-size-adjust 100%
+//   -webkit-text-size-adjust 100%
+//   font-size 10px
+//   -webkit-tap-highlight-color rgba(0, 0, 0, 0)
 
-div
-  display block
+// body
+//   font-family Helvetica, Arial, sans-serif
+//   font-size 16px
+//   line-height 1.5
+//   color #222326
+//   background-color #b70e0e 
+//   font-weight 400
+//   min-height 100vh
+//   display -moz-flex
+//   display -ms-flexbox
+//   display -ms-flex
+//   display -webkit-box
+//   display flex
+//   -moz-flex-direction column
+//   -ms-flex-direction column
+//   -webkit-box-orient vertical
+//   -webkit-box-direction normal
+//   flex-direction column
+//   margin 0
 
-input, button, select, textarea
-  font-family inherit
-  font-size inherit
-  line-height inherit
+// div
+//   display block
 
-button,
-html input[type='button'],
-input[type='reset'], 
-input[type='submit']
-  -webkit-appearance button
-  cursor pointer
+// input, button, select, textarea
+//   font-family inherit
+//   font-size inherit
+//   line-height inherit
 
-button, select
-  text-transform none
+// button,
+// html input[type='button'],
+// input[type='reset'], 
+// input[type='submit']
+//   -webkit-appearance button
+//   cursor pointer
 
-button
-  overflow visible
+// button, select
+//   text-transform none
 
-button, input, optgroup, select, textarea
-  color inherit
-  font inherit
-  margin 0
+// button
+//   overflow visible
 
-ul, ol
-  margin-top 0
-  margin-bottom 12px
+// button, input, optgroup, select, textarea
+//   color inherit
+//   font inherit
+//   margin 0
 
-ul, menu, dir
-  display block
-  list-style-type disc
-  margin-block-start 1em
-  margin-block-end 1em
-  margin-inline-start 0px
-  margin-inline-end 0px
-  padding-inline-start 40px
+// ul, ol
+//   margin-top 0
+//   margin-bottom 12px
+
+// ul, menu, dir
+//   display block
+//   list-style-type disc
+//   margin-block-start 1em
+//   margin-block-end 1em
+//   margin-inline-start 0px
+//   margin-inline-end 0px
+//   padding-inline-start 40px
 
 .fouc *
   visibility visible
@@ -88,65 +90,66 @@ ul, menu, dir
   -webkit-box-sizing border-box
   box-sizing border-box
 
-.container
-  margin-right auto
-  margin-left auto
-  padding 0 15px 0
+// .container
+//   margin-right auto
+//   margin-left auto
+//   padding 0 15px 0
 
 // .App
 //   display block
 //   background white
 //   height 500px
 
-.clearfix:before, 
-.clearfix:after, 
-.dl-horizontal dd:before, 
-.dl-horizontal dd:after, 
-.container:before, 
-.container:after, 
-.container-fluid:before, 
-.container-fluid:after, 
-.row:before, 
-.row:after, 
-.form-horizontal .form-group:before,
-.form-horizontal .form-group:after,
-.btn-toolbar:before,
-.btn-toolbar:after,
-.btn-group-vertical > .btn-group:before, 
-.btn-group-vertical > .btn-group:after, 
-.nav:before, 
-.nav:after, 
-.navbar:before, 
-.navbar:after, 
-.navbar-header:before, 
-.navbar-header:after, 
-.navbar-collapse:before, 
-.navbar-collapse:after, 
-.pager:before, 
-.pager:after, 
-.panel-body:before, 
-.panel-body:after, 
-.modal-header:before, 
-.modal-header:after, 
-.modal-footer:before, 
-.modal-footer:after,
-.btn-group-vertical > .btn-group-inverse:before, 
-.btn-group-vertical > .btn-group-inverse:after, 
-.nav-inverse:before, 
-.nav-inverse:after
-  content " "
-  display table
+// .clearfix:before, 
+// .clearfix:after, 
+// .dl-horizontal dd:before, 
+// .dl-horizontal dd:after, 
+// .container:before, 
+// .container:after, 
+// .container-fluid:before, 
+// .container-fluid:after, 
+// .row:before, 
+// .row:after, 
+// .form-horizontal .form-group:before,
+// .form-horizontal .form-group:after,
+// .btn-toolbar:before,
+// .btn-toolbar:after,
+// .btn-group-vertical > .btn-group:before, 
+// .btn-group-vertical > .btn-group:after, 
+// .nav:before, 
+// .nav:after, 
+// .navbar:before, 
+// .navbar:after, 
+// .navbar-header:before, 
+// .navbar-header:after, 
+// .navbar-collapse:before, 
+// .navbar-collapse:after, 
+// .pager:before, 
+// .pager:after, 
+// .panel-body:before, 
+// .panel-body:after, 
+// .modal-header:before, 
+// .modal-header:after, 
+// .modal-footer:before, 
+// .modal-footer:after,
+// .btn-group-vertical > .btn-group-inverse:before, 
+// .btn-group-vertical > .btn-group-inverse:after, 
+// .nav-inverse:before, 
+// .nav-inverse:after
+//   content " "
+//   display table
 
-*:before, 
-*:after
-  -webkit-box-sizing border-box
-  box-sizing border-box
+// *:before, 
+// *:after
+//   -webkit-box-sizing border-box
+//   box-sizing border-box
 
 main   
   width 100%
   // height -webkit-fill-available
   background-color white // #06cf67
   position relative
+  color black
   // left 0
   // right 0
   // top 72px
@@ -159,10 +162,326 @@ main
   // z-index 9999
   // height max-content
   // overflow scroll
-  // margin-top 0px
+  margin-top 96px
 
 ul
   list-style-type none
 
 // ul li
 //   display inline-block
+
+
+
+/*
+ * Styles for Application
+ *
+ */
+
+/* Now, let's apply it on an element */
+body
+  font-family 'system'
+
+body
+  font-family -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'
+
+/* Resets */
+// body,p,h1,h2,h3,h4,h5,h6,div,span,header,footer,img,a,ahover,aactive,avisited,table,tr,td,th,form,input,button,select,textarea
+//   line-height 100%
+//   padding 0
+//   margin 0
+//   font-family sans-serif
+//   font-size 12px
+//   font-weight normal
+//   text-decoration none
+//   color #1a1a1a
+//   border-width 0
+
+
+// .clear
+//   float none
+//   width 100%
+//   height 1px
+
+/* Main color palette */
+// .header
+//   background-color #fff
+//   border-width 0 0 1px 0
+//   border-style solid
+//   border-color #fff
+//   box-shadow 0 -25px 11px 20px #000
+//   position fixed
+//   top 0
+//   left 0
+//   width 100%
+//   padding 20px 0
+//   /* min-width 1200px */
+//   z-index 1
+
+// .header ul 
+//   list-style-type none
+//   text-align right
+//   padding 0 75px
+//   float right
+
+.header ul li 
+  display inline-block
+  padding 10px 10px 0 10px
+
+// .header ul li a
+//   text-transform uppercase
+//   font-weight 900 !important
+//   font-size 11px
+
+.header ul li.loggedIn
+  display none
+
+// .loggedIn
+//   display none
+
+// #Menu ul > li
+//     display inline-block
+//     padding 0 20px
+//     font-size 16px
+
+// #Menu ul > li .loggedIn
+//   display none!important
+// // #Menu.loggedIn
+// //   display none !important
+
+
+body.loggedIn .header ul li.loggedIn
+  display inline-block
+
+body.loggedIn .header ul li.loggedOut
+  display none
+
+.header .logo
+  // text-align left
+  // padding 0 0 0 90px
+  // float left
+
+.corp-logo
+  font-size 44px
+  height auto
+  padding 0px
+  margin-top 10px
+
+.header .logo img
+    width 50px
+    background pink
+
+[class*=nmc-glyph--] {
+  display: inline-block;
+  overflow: hidden;
+  text-align: left;
+  text-indent: 100%;
+  white-space: nowrap;
+  position: relative;
+  vertical-align: middle;
+  width: 1em;
+  height: 1em;
+}
+
+// .nmc-glyph--logo:before, .nmc-glyph--swoosh:before {
+// content: "\00c2";
+// }
+
+.content
+  z-index 0
+
+.pageNotFound
+  padding-bottom 30px
+
+.footer 
+  width 100%
+  background-color #1a1a1a
+  padding 50px 0
+  text-align center
+  border-width 1px 0 0 0
+  border-color #fff
+  border-style solid
+
+.footer .copyright
+  color #fff
+  font-size 10px
+  padding 1px
+
+/* Index */
+h1
+  text-align center
+  // font-size 20px
+  text-transform uppercase
+  font-weight bold
+  padding 0 0 5px 0
+  // font-family impact
+
+h2
+  text-align center
+  text-transform uppercase
+  font-weight bold
+  padding 0 0 20px 0
+  font-size 14px
+  // font-family verdana
+
+.white
+  color $white
+
+.impact
+  font-family Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+  font-size 16px
+
+.blurb
+  text-align center
+  padding 20px
+  margin 0 auto 4px auto
+  max-width 305px
+  line-height 150%
+  font-size 14px
+  border solid 1px $white
+  color $white
+  font-family "Helvetica Neue", Helvetica, Arial, sans-serif
+  font-weight normal
+  letter-spacing 0.5px
+  -webkit-font-smoothing antialiased
+
+.ctaWrapper
+  text-align center
+
+.cta,
+a.ctahover,
+a.ctaactive,
+a.ctavisited,
+button.ctahover,
+button.ctaactive,
+button.ctavisited
+  background-color #1a1a1a
+  color #fff
+  text-transform uppercase
+  text-align center
+  display inline-block
+  padding 15px
+  width 150px
+  cursor pointer
+
+.cta.blue
+  background-color #214478 !important
+
+.cta.green
+  background-color #217844 !important
+
+.cta.red
+  background-color #c83737 !important
+
+.warning
+  color #c83737
+  font-size 17px
+  text-align center
+  line-height 150%
+  padding 0 0 20px 0 
+
+/* Form Styling for Account Creation page and others */
+.formWrapper
+  margin 0 auto
+  max-width 500px
+  padding 15px
+
+.formError
+  display none
+  background-color #c8046d
+  color #fff
+  padding 10px 15px
+  margin 0 0 20px
+  text-align center
+
+.formSuccess
+  display none
+  background-color #217844
+  color #fff
+  padding 10px 15px
+  margin 0 6px 6px 6px
+  text-align center
+
+hr 
+  margin 30px 0
+
+input,select,option 
+  border-width 1px
+  border-radius 2px
+  padding 7px 1%
+  width 100%
+
+.checkboxGroup input
+  display inline-block
+  width initial
+  margin 20px
+
+input.disabled
+  background-color #efefef
+
+.inputWrapper
+  padding 0 0 20px 0
+
+.inputLabel
+  padding 0 0 5px 0
+  color #808080
+
+.backButton
+  text-transform uppercase
+  font-weight bold !important
+  display inline-block !important
+  width 100px
+  padding 7px !important
+  color #fff !important
+  background-color #1a1a1a
+  text-align center
+  cursor pointer
+
+table
+  width 100%
+
+tr
+  width 100%
+
+th
+  text-transform uppercase
+  font-weight bold
+  padding 10px
+  border-color #000
+  border-style dotted
+  padding 10px
+  margin 0 0 10px 0
+  background-color #efefef
+
+td
+  padding 5px
+
+td a, td a:hover, td a:active
+  color #2e5fa8
+  text-decoration underline
+  cursor pointer
+
+/* Page specific styles for dashboard */
+#noChecksMessage td 
+  text-align center
+  font-size 20px
+  padding 20px
+  text-transform uppercase
+
+#noChecksMessage 
+  display none
+
+#createCheckCTA 
+  margin-top 40px
+  display none
+
+.garage-logo
+  width 80px
+
+.mod-bg-accent
+  background #3498db
+
+.main-layout .content-wrapper
+  transition transform 800ms ease 80ms, opacity 1800ms ease 200ms
+  min-height 100%
+  padding-bottom $footerMobileHeight
+  position relative

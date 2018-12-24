@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/home'
+import '../styles/pages/home'
 
 export default function Home(props) {
   const { title } = props

@@ -1,0 +1,365 @@
+/*************************************************************************/
+/* Utilites */
+
+/* Vertical Align Placeholder */
+$vertical-align
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+
+/* Clearfix */
+.u-clearfix
+  &:before
+  &:after
+    content: "";
+    display: table;
+  &:after
+    clear: both;
+
+/* Bold */
+.u-bold,
+strong
+  font-weight: bold;
+
+/* Italic */
+.u-italic,
+em
+  font-style: italic;
+
+/* Underline */
+.u-underline
+  text-decoration: underline;
+
+/* Make uppercase */
+.u-uppercase
+  text-transform: uppercase;
+
+/* Make lowercase */
+.u-lowercase
+  text-transform: lowercase;
+
+/* Make uppercase */
+.u-capitalize
+  text-transform: capitalize;
+
+/* No white space and no white space w/ellipsis */
+.u-no
+  &-ws
+    overflow: hidden;
+    white-space: nowrap;
+  &-ws-e
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+/* Make full width */
+.u-full-width
+  width: 100%;
+
+/* Make max width */
+.u-max-width
+  max-width: 100%;
+
+/* Make full height */
+.u-full-height
+  height: 100%;
+
+/* Make max height */
+.u-max-height
+  max-height: 100%;
+
+/* Float left and right */
+.u-float
+  &-left
+    float: left;
+  &-right
+    float: right;
+
+/* Text align left, right and center */
+.u-align
+  &-left
+    text-align: left;
+  &-right
+    text-align: right;
+  &-center
+    text-align: center;
+
+/* Roundeed Corners */
+.u-rounded
+  border-radius: $globalBorderRadius;
+
+/* Cursors */
+.u-cursor
+  &-default
+    cursor: default;
+  &-pointer
+    cursor: pointer;
+
+/* Visibility */
+.u
+  &-sm-b
+    display: block;
+  &-sm-ib
+    display: inline-block;
+  &-sm-t
+    display: table;
+  &-sm-tr
+    display: table-row;
+  &-sm-tc
+    display: table-cell;
+  &-sm-h
+    display: none;
+  @media $tablet
+    &-md-b
+      display: block;
+    &-md-ib
+      display: inline-block;
+    &-md-t
+      display: table;
+    &-md-tr
+      display: table-row;
+    &-md-tc
+      display: table-cell;
+    &-md-h
+      display: none;
+  @media $desktop
+    &-lg-b
+      display: block;
+    &-lg-ib
+      display: inline-block;
+    &-lg-t
+      display: table;
+    &-lg-tr
+      display: table-row;
+    &-lg-tc
+      display: table-cell;
+    &-lg-h
+      display: none;
+  @media $largeDesktop
+    &-xl-b
+      display: block;
+    &-xl-ib
+      display: inline-block;
+    &-xl-t
+      display: table;
+    &-xl-tr
+      display: table-row;
+    &-xl-tc
+      display: table-cell;
+    &-xl-h
+      display: none;
+  @media $extraLargeDesktop
+    &-xl-b
+      display: block;
+    &-xl-ib
+      display: inline-block;
+    &-xl-t
+      display: table;
+    &-xl-tr
+      display: table-row;
+    &-xl-tc
+      display: table-cell;
+    &-xl-h
+      display: none;
+
+.u-va
+  &-t
+    vertical-align: top;
+  &-m
+    vertical-align: middle;
+  &-b
+    vertical-align: bottom;
+
+/* set element vertical align top, middle, bottom */
+.u-va
+  @extend $vertical-align;
+
+/* set element to be inactive */
+.inactive
+  opacity: .2;
+
+/*************************************************************************/
+/* Padding & Margin Creation */
+
+.p
+  for p in $globalPaddingSize
+    &t{p[0]}-sm
+      padding-top: unit(round(p[1] * $globalLineHeight), 'px');
+    &r{p[0]}-sm
+      padding-right: unit(round(p[1] * $globalLineHeight), 'px');
+    &b{p[0]}-sm
+      padding-bottom: unit(round(p[1] * $globalLineHeight), 'px');
+    &l{p[0]}-sm
+      padding-left: unit(round(p[1] * $globalLineHeight), 'px');
+    &rl{p[0]}-sm
+      padding-right: unit(round(p[1] * $globalLineHeight), 'px');
+      padding-left: unit(round(p[1] * $globalLineHeight), 'px');
+    &{p[0]}-sm
+      padding: unit(round(p[1] * $globalLineHeight), 'px');
+
+.m
+  for s in $globalMarginSize
+    &t{s[0]}-sm
+      margin-top: unit(round(s[1] * $globalLineHeight), 'px');
+    &t-{s[0]}-sm
+      margin-top: - unit(round(s[1] * $globalLineHeight), 'px');
+    &r{s[0]}-sm
+      margin-right: unit(round(s[1] * $globalLineHeight), 'px');
+    &b{s[0]}-sm
+      margin-bottom: unit(round(s[1] * $globalLineHeight), 'px');
+    &b-{s[0]}-sm
+      margin-bottom: - unit(round(s[1] * $globalLineHeight), 'px');
+    &l{s[0]}-sm
+      margin-left: unit(round(s[1] * $globalLineHeight), 'px');
+    &{s[0]}-sm
+      margin: unit(round(s[1] * $globalLineHeight), 'px');
+
+@media $tablet
+  .p
+    for p in $globalPaddingSize
+      &t{p[0]}-md
+        padding-top: unit(round(p[1] * $globalLineHeight), 'px');
+      &r{p[0]}-md
+        padding-right: unit(round(p[1] * $globalLineHeight), 'px');
+      &b{p[0]}-md
+        padding-bottom: unit(round(p[1] * $globalLineHeight), 'px');
+      &l{p[0]}-md
+        padding-left: unit(round(p[1] * $globalLineHeight), 'px');
+      &rl{p[0]}-md
+        padding-right: unit(round(p[1] * $globalLineHeight), 'px');
+        padding-left: unit(round(p[1] * $globalLineHeight), 'px');
+      &{p[0]}-md
+        padding: unit(round(p[1] * $globalLineHeight), 'px');
+
+  .m
+    for s in $globalMarginSize
+      &t{s[0]}-md
+        margin-top: unit(round(s[1] * $globalLineHeight), 'px');
+      &t-{s[0]}-md
+        margin-top: - unit(round(s[1] * $globalLineHeight), 'px');
+      &r{s[0]}-md
+        margin-right: unit(round(s[1] * $globalLineHeight), 'px');
+      &b{s[0]}-md
+        margin-bottom: unit(round(s[1] * $globalLineHeight), 'px');
+      &b-{s[0]}-md
+        margin-bottom: - unit(round(s[1] * $globalLineHeight), 'px');
+      &l{s[0]}-md
+        margin-left: unit(round(s[1] * $globalLineHeight), 'px');
+      &{s[0]}-md
+        margin: unit(round(s[1] * $globalLineHeight), 'px');
+
+@media $desktop
+  .p
+    for p in $globalPaddingSize
+      &t{p[0]}-lg
+        padding-top: unit(round(p[1] * $globalLineHeight), 'px');
+      &r{p[0]}-lg
+        padding-right: unit(round(p[1] * $globalLineHeight), 'px');
+      &b{p[0]}-lg
+        padding-bottom: unit(round(p[1] * $globalLineHeight), 'px');
+      &l{p[0]}-lg
+        padding-left: unit(round(p[1] * $globalLineHeight), 'px');
+      &rl{p[0]}-lg
+        padding-right: unit(round(p[1] * $globalLineHeight), 'px');
+        padding-left: unit(round(p[1] * $globalLineHeight), 'px');
+      &{p[0]}-lg
+        padding: unit(round(p[1] * $globalLineHeight), 'px');
+
+  .m
+    for s in $globalMarginSize
+      &t{s[0]}-lg
+        margin-top: unit(round(s[1] * $globalLineHeight), 'px');
+      &t-{s[0]}-lg
+        margin-top: - unit(round(s[1] * $globalLineHeight), 'px');
+      &r{s[0]}-lg
+        margin-right: unit(round(s[1] * $globalLineHeight), 'px');
+      &b{s[0]}-lg
+        margin-bottom: unit(round(s[1] * $globalLineHeight), 'px');
+      &b-{s[0]}-lg
+        margin-bottom: - unit(round(s[1] * $globalLineHeight), 'px');
+      &l{s[0]}-lg
+        margin-left: unit(round(s[1] * $globalLineHeight), 'px');
+      &{s[0]}-lg
+        margin: unit(round(s[1] * $globalLineHeight), 'px');
+
+@media $largeDesktop
+  .p
+    for p in $globalPaddingSize
+      &t{p[0]}-xl
+        padding-top: unit(round(p[1] * $globalLineHeight), 'px');
+      &r{p[0]}-xl
+        padding-right: unit(round(p[1] * $globalLineHeight), 'px');
+      &b{p[0]}-xl
+        padding-bottom: unit(round(p[1] * $globalLineHeight), 'px');
+      &l{p[0]}-xl
+        padding-left: unit(round(p[1] * $globalLineHeight), 'px');
+      &rl{p[0]}-xl
+        padding-right: unit(round(p[1] * $globalLineHeight), 'px');
+        padding-left: unit(round(p[1] * $globalLineHeight), 'px');
+      &{p[0]}-xl
+        padding: unit(round(p[1] * $globalLineHeight), 'px');
+
+  .m
+    for s in $globalMarginSize
+      &t{s[0]}-xl
+        margin-top: unit(round(s[1] * $globalLineHeight), 'px');
+      &t-{s[0]}-xl
+        margin-top: - unit(round(s[1] * $globalLineHeight), 'px');
+      &r{s[0]}-xl
+        margin-right: unit(round(s[1] * $globalLineHeight), 'px');
+      &b{s[0]}-xl
+        margin-bottom: unit(round(s[1] * $globalLineHeight), 'px');
+      &b-{s[0]}-xl
+        margin-bottom: - unit(round(s[1] * $globalLineHeight), 'px');
+      &l{s[0]}-xl
+        margin-left: unit(round(s[1] * $globalLineHeight), 'px');
+      &{s[0]}-xl
+        margin: unit(round(s[1] * $globalLineHeight), 'px');
+
+@media $extraLargeDesktop
+  .p
+    for p in $globalPaddingSize
+      &t{p[0]}-xxl
+        padding-top: unit(round(p[1] * $globalLineHeight), 'px');
+      &r{p[0]}-xxl
+        padding-right: unit(round(p[1] * $globalLineHeight), 'px');
+      &b{p[0]}-xxl
+        padding-bottom: unit(round(p[1] * $globalLineHeight), 'px');
+      &l{p[0]}-xxl
+        padding-left: unit(round(p[1] * $globalLineHeight), 'px');
+      &rl{p[0]}-xxl
+        padding-right: unit(round(p[1] * $globalLineHeight), 'px');
+        padding-left: unit(round(p[1] * $globalLineHeight), 'px');
+      &{p[0]}-xxl
+        padding: unit(round(p[1] * $globalLineHeight), 'px');
+
+  .m
+    for s in $globalMarginSize
+      &t{s[0]}-xxl
+        margin-top: unit(round(s[1] * $globalLineHeight), 'px');
+      &t-{s[0]}-xxl
+        margin-top: - unit(round(s[1] * $globalLineHeight), 'px');
+      &r{s[0]}-xxl
+        margin-right: unit(round(s[1] * $globalLineHeight), 'px');
+      &b{s[0]}-xxl
+        margin-bottom: unit(round(s[1] * $globalLineHeight), 'px');
+      &b-{s[0]}-xxl
+        margin-bottom: - unit(round(s[1] * $globalLineHeight), 'px');
+      &l{s[0]}-xxl
+        margin-left: unit(round(s[1] * $globalLineHeight), 'px');
+      &{s[0]}-xxl
+        margin: unit(round(s[1] * $globalLineHeight), 'px');
+
+
+/*************************************************************************/
+/* Border Spacing Creation */
+
+for bs in $globalBorderSpacing
+  .bs{bs[0]}
+    border-spacing: 0px unit(round(bs[1] * $globalLineHeight), 'px');
+
+/*************************************************************************/
+/* Z-Index Creation */
+for z in $zIndexes
+  .z{z[0]}
+    z-index:    unit(z[0], '');

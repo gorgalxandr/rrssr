@@ -1,0 +1,59 @@
+/*************************************************************************/
+/* Caclulate percentage mixin */
+percentage(numbers)
+  return (numbers * 100)%
+
+/*************************************************************************/
+/* Caclulate line height mixin */
+getLineHeight(num)
+  return unit( ($globalLineHeight * ceil(num/$globalLineHeight)) / num , '')
+
+/*************************************************************************/
+/* Convert PX to REM */
+rem(num)
+  // (num / 16)rem
+  return num
+
+/*************************************************************************/
+/* Create Box Shaodw w/ Prefix */
+createBorder(loc, color)
+
+  $compiled = ""
+
+  for i, index in loc
+    if i == 'top'
+      if index > 0
+        $compiled += ',' + inset 0 1px 0 0 color
+      else
+        $compiled += inset 0 1px 0 0 color
+
+    else if i == 'right'
+      if index > 0
+        $compiled += ',' + inset -1px 0 0 0 color
+      else
+        $compiled += inset -1px 0px 0px 0px color
+
+    else if i == 'bottom'
+      if index > 0
+        $compiled += ',' + inset 0px -1px 0px 0px color
+      else
+        $compiled += inset 0px -1px 0px 0px color
+
+    else if i == 'left'
+      if index > 0
+        $compiled += ',' + inset 1px 0px 0px 0px color
+      else
+        $compiled += inset 1px 0px 0px 0px color
+
+    else
+      $top = inset 0px 1px 0px 0px color
+      $right = inset -1px 0px 0px 0px color
+      $bottom = inset 0px -1px 0px 0px color
+      $left = inset 1px 0px 0px 0px color
+
+      if $globalBorderRadius > 0
+        $compiled = join(',', $top $right $bottom $left)
+      else
+        $compiled += inset 0px 0px 0px 1px color
+
+  return unquote($compiled)

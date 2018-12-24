@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/footer'
+import '../styles/layout/footer'
 
 export default function Footer(props) {
   const d = new Date()

@@ -1,0 +1,525 @@
+[
+  {
+    "locale" : "ca-es",
+    "baseFontFamily": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "brandFontFamily": "\"Nike TG\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "imports" : [
+      {
+        "font-family" : "\"Nike TG\"",
+        "font-style" : "normal",
+        "font-weight" : "normal",
+        "eot-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot",
+        "eot-fix-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot?#iefix",
+        "woff-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.woff",
+        "ttf-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.ttf",
+        "svg-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.svg#257c802f-349c-4b4d-aefa-546d5de15ec6"
+      }
+    ]
+  },
+  {
+    "locale" : "cs-cz",
+    "baseFontFamily": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "brandFontFamily": "\"Nike TG\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "imports" : [
+      {
+        "font-family" : "\"Nike TG\"",
+        "font-style" : "normal",
+        "font-weight" : "normal",
+        "eot-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot",
+        "eot-fix-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot?#iefix",
+        "woff-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.woff",
+        "ttf-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.ttf",
+        "svg-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.svg#257c802f-349c-4b4d-aefa-546d5de15ec6"
+      }
+    ]
+  },
+  {
+    "locale" : "da-dk",
+    "baseFontFamily": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "brandFontFamily": "\"Nike TG\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "imports" : [
+      {
+        "font-family" : "\"Nike TG\"",
+        "font-style" : "normal",
+        "font-weight" : "normal",
+        "eot-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot",
+        "eot-fix-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot?#iefix",
+        "woff-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.woff",
+        "ttf-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.ttf",
+        "svg-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.svg#257c802f-349c-4b4d-aefa-546d5de15ec6"
+      }
+    ]
+  },
+  {
+    "locale" : "de-de",
+    "baseFontFamily": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "brandFontFamily": "\"Nike TG\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "imports" : [
+      {
+        "font-family" : "\"Nike TG\"",
+        "font-style" : "normal",
+        "font-weight" : "normal",
+        "eot-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot",
+        "eot-fix-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot?#iefix",
+        "woff-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.woff",
+        "ttf-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.ttf",
+        "svg-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.svg#257c802f-349c-4b4d-aefa-546d5de15ec6"
+      }
+    ]
+  },
+  {
+    "locale" : "el-gr",
+    "baseFontFamily": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "brandFontFamily": "\"Nike TG\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "imports" : [
+      {
+        "font-family" : "\"Nike TG\"",
+        "font-style" : "normal",
+        "font-weight" : "normal",
+        "eot-src" : "7263212c-5f2c-4141-9ef3-64d179c8b54f.eot",
+        "eot-fix-src" : "7263212c-5f2c-4141-9ef3-64d179c8b54f.eot?#iefix",
+        "woff-src" : "7263212c-5f2c-4141-9ef3-64d179c8b54f.woff",
+        "ttf-src" : "7263212c-5f2c-4141-9ef3-64d179c8b54f.ttf",
+        "svg-src" : "7263212c-5f2c-4141-9ef3-64d179c8b54f.svg#7263212c-5f2c-4141-9ef3-64d179c8b54f"
+      }
+    ]
+  },
+  {
+    "locale" : "en-ca",
+    "baseFontFamily": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "brandFontFamily": "\"Nike TG\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "imports" : [
+      {
+        "font-family" : "\"Nike TG\"",
+        "font-style" : "normal",
+        "font-weight" : "normal",
+        "eot-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot",
+        "eot-fix-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot?#iefix",
+        "woff-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.woff",
+        "ttf-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.ttf",
+        "svg-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.svg#257c802f-349c-4b4d-aefa-546d5de15ec6"
+      }
+    ]
+  },
+  {
+    "locale" : "en-gb",
+    "baseFontFamily": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "brandFontFamily": "\"Nike TG\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "imports" : [
+      {
+        "font-family" : "\"Nike TG\"",
+        "font-style" : "normal",
+        "font-weight" : "normal",
+        "eot-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot",
+        "eot-fix-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot?#iefix",
+        "woff-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.woff",
+        "ttf-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.ttf",
+        "svg-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.svg#257c802f-349c-4b4d-aefa-546d5de15ec6"
+      }
+    ]
+  },
+  {
+    "locale" : "en-us",
+    "baseFontFamily": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "brandFontFamily": "\"Nike TG\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "imports" : [
+      {
+        "font-family" : "\"Nike TG\"",
+        "font-style" : "normal",
+        "font-weight" : "normal",
+        "eot-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot",
+        "eot-fix-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot?#iefix",
+        "woff-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.woff",
+        "ttf-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.ttf",
+        "svg-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.svg#257c802f-349c-4b4d-aefa-546d5de15ec6"
+      }
+    ]
+  },
+  {
+    "locale" : "es-ar",
+    "baseFontFamily": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "brandFontFamily": "\"Nike TG\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "imports" : [
+      {
+        "font-family" : "\"Nike TG\"",
+        "font-style" : "normal",
+        "font-weight" : "normal",
+        "eot-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot",
+        "eot-fix-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot?#iefix",
+        "woff-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.woff",
+        "ttf-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.ttf",
+        "svg-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.svg#257c802f-349c-4b4d-aefa-546d5de15ec6"
+      }
+    ]
+  },
+  {
+    "locale" : "es-cl",
+    "baseFontFamily": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "brandFontFamily": "\"Nike TG\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "imports" : [
+      {
+        "font-family" : "\"Nike TG\"",
+        "font-style" : "normal",
+        "font-weight" : "normal",
+        "eot-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot",
+        "eot-fix-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot?#iefix",
+        "woff-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.woff",
+        "ttf-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.ttf",
+        "svg-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.svg#257c802f-349c-4b4d-aefa-546d5de15ec6"
+      }
+    ]
+  },
+  {
+    "locale" : "es-es",
+    "baseFontFamily": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "brandFontFamily": "\"Nike TG\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "imports" : [
+      {
+        "font-family" : "\"Nike TG\"",
+        "font-style" : "normal",
+        "font-weight" : "normal",
+        "eot-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot",
+        "eot-fix-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot?#iefix",
+        "woff-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.woff",
+        "ttf-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.ttf",
+        "svg-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.svg#257c802f-349c-4b4d-aefa-546d5de15ec6"
+      }
+    ]
+  },
+  {
+    "locale" : "es-la",
+    "baseFontFamily": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "brandFontFamily": "\"Nike TG\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "imports" : [
+      {
+        "font-family" : "\"Nike TG\"",
+        "font-style" : "normal",
+        "font-weight" : "normal",
+        "eot-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot",
+        "eot-fix-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot?#iefix",
+        "woff-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.woff",
+        "ttf-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.ttf",
+        "svg-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.svg#257c802f-349c-4b4d-aefa-546d5de15ec6"
+      }
+    ]
+  },
+  {
+    "locale" : "es-mx",
+    "baseFontFamily": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "brandFontFamily": "\"Nike TG\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "imports" : [
+      {
+        "font-family" : "\"Nike TG\"",
+        "font-style" : "normal",
+        "font-weight" : "normal",
+        "eot-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot",
+        "eot-fix-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot?#iefix",
+        "woff-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.woff",
+        "ttf-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.ttf",
+        "svg-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.svg#257c802f-349c-4b4d-aefa-546d5de15ec6"
+      }
+    ]
+  },
+  {
+    "locale" : "es-uy",
+    "baseFontFamily": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "brandFontFamily": "\"Nike TG\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "imports" : [
+      {
+        "font-family" : "\"Nike TG\"",
+        "font-style" : "normal",
+        "font-weight" : "normal",
+        "eot-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot",
+        "eot-fix-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot?#iefix",
+        "woff-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.woff",
+        "ttf-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.ttf",
+        "svg-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.svg#257c802f-349c-4b4d-aefa-546d5de15ec6"
+      }
+    ]
+  },
+  {
+    "locale" : "fr-fr",
+    "baseFontFamily": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "brandFontFamily": "\"Nike TG\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "imports" : [
+      {
+        "font-family" : "\"Nike TG\"",
+        "font-style" : "normal",
+        "font-weight" : "normal",
+        "eot-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot",
+        "eot-fix-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot?#iefix",
+        "woff-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.woff",
+        "ttf-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.ttf",
+        "svg-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.svg#257c802f-349c-4b4d-aefa-546d5de15ec6"
+      }
+    ]
+  },
+  {
+    "locale" : "hu-hu",
+    "baseFontFamily": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "brandFontFamily": "\"Nike TG\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "imports" : [
+      {
+        "font-family" : "\"Nike TG\"",
+        "font-style" : "normal",
+        "font-weight" : "normal",
+        "eot-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot",
+        "eot-fix-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot?#iefix",
+        "woff-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.woff",
+        "ttf-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.ttf",
+        "svg-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.svg#257c802f-349c-4b4d-aefa-546d5de15ec6"
+      }
+    ]
+  },
+  {
+    "locale" : "it-it",
+    "baseFontFamily": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "brandFontFamily": "\"Nike TG\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "imports" : [
+      {
+        "font-family" : "\"Nike TG\"",
+        "font-style" : "normal",
+        "font-weight" : "normal",
+        "eot-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot",
+        "eot-fix-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot?#iefix",
+        "woff-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.woff",
+        "ttf-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.ttf",
+        "svg-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.svg#257c802f-349c-4b4d-aefa-546d5de15ec6"
+      }
+    ]
+  },
+  {
+    "locale" : "ja-jp",
+    "baseFontFamily": "\"Helvetica Neue\", Helvetica, Arial, \"メイリオ\", Meiryo, \"Hiragino Kaku Gothic Pro\", \"ＭＳ Ｐゴシック\", \"MS PGothic\", sans-serif",
+    "brandFontFamily": "\"Nike TG\", Meiryo, \"メイリオ\", \"MS Pgothic\", \"ＭＳ Ｐゴシック\", \"Hiragino Kaku Gothic Pro\", \"ヒラギノ角ゴ\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "imports" : [
+      {
+        "font-family" : "\"Nike TG\"",
+        "font-style" : "normal",
+        "font-weight" : "normal",
+        "eot-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot",
+        "eot-fix-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot?#iefix",
+        "woff-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.woff",
+        "ttf-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.ttf",
+        "svg-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.svg#257c802f-349c-4b4d-aefa-546d5de15ec6"
+      }
+    ]
+  },
+  {
+    "locale" : "ko-kr",
+    "baseFontFamily": "\"Arial Bold\", \"Helvetica Neue\", Helvetica, Arial, Dotum, \"국어\", Gulim, sans-serif",
+    "brandFontFamily": "\"Nike TG\", FBHanGothicDB, \"Arial Bold\", \"Helvetica Neue\", Helvetica, Arial, Dotum, \"국어\", Gulim, sans-serif",
+    "imports" : [
+      {
+        "font-family" : "\"Nike TG\"",
+        "font-style" : "normal",
+        "font-weight" : "normal",
+        "eot-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot",
+        "eot-fix-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot?#iefix",
+        "woff-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.woff",
+        "ttf-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.ttf",
+        "svg-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.svg#257c802f-349c-4b4d-aefa-546d5de15ec6"
+      },
+      {
+        "font-family" : "FBHanGothicDB",
+        "font-style" : "normal",
+        "font-weight" : "normal",
+        "eot-src" : "b0501f0d-019c-4d71-b567-45993f30fc20.eot",
+        "eot-fix-src" : "b0501f0d-019c-4d71-b567-45993f30fc20.eot?#iefix",
+        "woff-src" : "b0501f0d-019c-4d71-b567-45993f30fc20.woff",
+        "ttf-src" : "b0501f0d-019c-4d71-b567-45993f30fc20.ttf",
+        "svh-src" : "b0501f0d-019c-4d71-b567-45993f30fc20.svg#b0501f0d-019c-4d71-b567-45993f30fc20"
+      }
+    ]
+  },
+  {
+    "locale" : "nl-nl",
+    "baseFontFamily": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "brandFontFamily": "\"Nike TG\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "imports" : [
+      {
+        "font-family" : "\"Nike TG\"",
+        "font-style" : "normal",
+        "font-weight" : "normal",
+        "eot-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot",
+        "eot-fix-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot?#iefix",
+        "woff-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.woff",
+        "ttf-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.ttf",
+        "svg-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.svg#257c802f-349c-4b4d-aefa-546d5de15ec6"
+      }
+    ]
+  },
+  {
+    "locale" : "pl-pl",
+    "baseFontFamily": "\"Helvetica W02 Roman\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "brandFontFamily": "\"Nike TG\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "imports" : [
+      {
+        "font-family" : "\"Nike TG\"",
+        "font-style" : "normal",
+        "font-weight" : "normal",
+        "eot-src" : "e4693908-7208-4b04-93c4-8d004c3b4e1f.eot",
+        "eot-fix-src" : "e4693908-7208-4b04-93c4-8d004c3b4e1f.eot?#iefix",
+        "woff-src" : "e4693908-7208-4b04-93c4-8d004c3b4e1f.woff",
+        "ttf-src" : "e4693908-7208-4b04-93c4-8d004c3b4e1f.ttf",
+        "svg-src" : "e4693908-7208-4b04-93c4-8d004c3b4e1f.svg#e4693908-7208-4b04-93c4-8d004c3b4e1f"
+      },
+      {
+        "font-family" : "Helvetica W02 Roman",
+        "font-style" : "normal",
+        "font-weight" : "normal",
+        "eot-src" : "e4bd4516-4480-43df-aa6e-4e9b9029f53e.eot",
+        "eot-fix-src" : "e4bd4516-4480-43df-aa6e-4e9b9029f53e.eot?#iefix",
+        "woff-src" : "e4bd4516-4480-43df-aa6e-4e9b9029f53e.woff",
+        "ttf-src" : "e4bd4516-4480-43df-aa6e-4e9b9029f53e.ttf",
+        "svg-src" : "e4bd4516-4480-43df-aa6e-4e9b9029f53e.svg#e4bd4516-4480-43df-aa6e-4e9b9029f53e"
+      }
+    ]
+  },
+  {
+    "locale" : "pt-br",
+    "baseFontFamily": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "brandFontFamily": "\"Nike TG\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "imports" : [
+      {
+        "font-family" : "\"Nike TG\"",
+        "font-style" : "normal",
+        "font-weight" : "normal",
+        "eot-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot",
+        "eot-fix-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot?#iefix",
+        "woff-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.woff",
+        "ttf-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.ttf",
+        "svg-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.svg#257c802f-349c-4b4d-aefa-546d5de15ec6"
+      }
+    ]
+  },
+  {
+    "locale" : "pt-pt",
+    "baseFontFamily": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "brandFontFamily": "\"Nike TG\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "imports" : [
+      {
+        "font-family" : "\"Nike TG\"",
+        "font-style" : "normal",
+        "font-weight" : "normal",
+        "eot-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot",
+        "eot-fix-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot?#iefix",
+        "woff-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.woff",
+        "ttf-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.ttf",
+        "svg-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.svg#257c802f-349c-4b4d-aefa-546d5de15ec6"
+      }
+    ]
+  },
+  {
+    "locale" : "ru-ru",
+    "baseFontFamily": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "brandFontFamily": "\"Nike TG\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "imports" : [
+      {
+        "font-family" : "\"Nike TG\"",
+        "font-style" : "normal",
+        "font-weight" : "normal",
+        "eot-src" : "ee9d9095-3222-4aee-b486-937691f98db9.eot",
+        "eot-fix-src" : "ee9d9095-3222-4aee-b486-937691f98db9.eot?#iefix",
+        "woff-src" : "ee9d9095-3222-4aee-b486-937691f98db9.woff",
+        "ttf-src" : "ee9d9095-3222-4aee-b486-937691f98db9.ttf",
+        "svg-src" : "ee9d9095-3222-4aee-b486-937691f98db9.svg#ee9d9095-3222-4aee-b486-937691f98db9"
+      }
+    ]
+  },
+  {
+    "locale" : "sv-se",
+    "baseFontFamily": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "brandFontFamily": "\"Nike TG\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "imports" : [
+      {
+        "font-family" : "\"Nike TG\"",
+        "font-style" : "normal",
+        "font-weight" : "normal",
+        "eot-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot",
+        "eot-fix-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot?#iefix",
+        "woff-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.woff",
+        "ttf-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.ttf",
+        "svg-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.svg#257c802f-349c-4b4d-aefa-546d5de15ec6"
+      }
+    ]
+  },
+  {
+    "locale" : "th-th",
+    "baseFontFamily": "\"Helvetica Neue W31\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "brandFontFamily": "\"Nike TG\", \"Helvetica Neue W31\", \"Helvetica Neue\", Helvetica, \"Arial Bold\", Arial, Tahoma, Thonburi, Ayuthaya, sans-serif",
+    "imports" : [
+      {
+        "font-family" : "\"Nike TG\"",
+        "font-style" : "normal",
+        "font-weight" : "normal",
+        "eot-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot",
+        "eot-fix-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot?#iefix",
+        "woff-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.woff",
+        "ttf-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.ttf",
+        "svg-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.svg#257c802f-349c-4b4d-aefa-546d5de15ec6"
+      },
+      {
+        "font-family" : "Helvetica Neue W31",
+        "font-style" : "normal",
+        "font-weight" : "normal",
+        "eot-src" : "badf75de-70f1-4350-adb4-4c4ad8b6382c.eot",
+        "eot-fix-src" : "badf75de-70f1-4350-adb4-4c4ad8b6382c.eot?#iefix",
+        "woff-src" : "badf75de-70f1-4350-adb4-4c4ad8b6382c.woff",
+        "ttf-src" : "badf75de-70f1-4350-adb4-4c4ad8b6382c.ttf",
+        "svg-src" : "badf75de-70f1-4350-adb4-4c4ad8b6382c.svg#badf75de-70f1-4350-adb4-4c4ad8b6382c"
+      }
+    ]
+  },
+  {
+    "locale" : "tr-tr",
+    "baseFontFamily": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "brandFontFamily": "\"Nike TG\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "imports" : [
+      {
+        "font-family" : "\"Nike TG\"",
+        "font-style" : "normal",
+        "font-weight" : "normal",
+        "eot-src" : "e4693908-7208-4b04-93c4-8d004c3b4e1f.eot",
+        "eot-fix-src" : "e4693908-7208-4b04-93c4-8d004c3b4e1f.eot?#iefix",
+        "woff-src" : "e4693908-7208-4b04-93c4-8d004c3b4e1f.ttf",
+        "ttf-src" : "e4693908-7208-4b04-93c4-8d004c3b4e1f.woff",
+        "svg-src" : "e4693908-7208-4b04-93c4-8d004c3b4e1f.svg#e4693908-7208-4b04-93c4-8d004c3b4e1f"
+      }
+    ]
+  },
+  {
+    "locale" : "zh-cn",
+    "baseFontFamily": "\"Helvetica Neue\", Helvetica, Arial, \"Heiti SC\", \"ST Heiti\", \"华文黑体\", \"Microsoft YaHei\", \"雅黑体\", SimHei, \"黑体\", sans-serif",
+    "brandFontFamily": "\"Nike TG\", \"Helvetica Neue\", Helvetica, Arial, \"Heiti SC\", \"ST Heiti\", \"华文黑体\", \"Microsoft YaHei\", \"雅黑体\", SimHei, \"黑体\", sans-serif",
+    "imports" : [
+      {
+        "font-family" : "\"Nike TG\"",
+        "font-style" : "normal",
+        "font-weight" : "normal",
+        "eot-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot",
+        "eot-fix-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot?#iefix",
+        "woff-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.woff",
+        "ttf-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.ttf",
+        "svg-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.svg#257c802f-349c-4b4d-aefa-546d5de15ec6"
+      }
+    ]
+  },
+  {
+    "locale" : "zh-tw",
+    "baseFontFamily": "\"Helvetica Neue\", Helvetica, Arial, \"Heiti SC\", \"ST Heiti\", \"华文黑体\", \"Microsoft YaHei\", \"雅黑体\", SimHei, \"黑体\", sans-serif",
+    "brandFontFamily": "\"Nike TG\", \"Helvetica Neue\", Helvetica, Arial, \"Heiti SC\", \"ST Heiti\", \"华文黑体\", \"Microsoft YaHei\", \"雅黑体\", SimHei, \"黑体\", sans-serif",
+    "imports" : [
+      {
+        "font-family" : "\"Nike TG\"",
+        "font-style" : "normal",
+        "font-weight" : "normal",
+        "eot-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot",
+        "eot-fix-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.eot?#iefix",
+        "woff-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.woff",
+        "ttf-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.ttf",
+        "svg-src" : "257c802f-349c-4b4d-aefa-546d5de15ec6.svg#257c802f-349c-4b4d-aefa-546d5de15ec6"
+      }
+    ]
+  }
+]

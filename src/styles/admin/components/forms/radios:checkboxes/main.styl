@@ -1,0 +1,111 @@
+/*************************************************************************/
+/* Import Variables */
+@import 'variables'
+
+/*************************************************************************/
+/* Common styles to be shared between radios and checkboxes */
+$radio-checkbox-properties
+  .{$prefix}-label
+    display inline-block
+    vertical-align top
+    position relative
+    cursor pointer
+    user-select: none
+    &:before
+      content:   ''
+      position:  absolute;
+      left:      0;
+      top:       50%;
+      transform: translate(0, -50%);
+      border:    $globalBorderWidth $globalBorderStyle $mediumGrey;
+      {$baseInputBeforeDemensions}
+  
+  .{$prefix}-checkbox
+  .{$prefix}-radio
+    display: none;
+    &:disabled
+      + .{$prefix}-label
+        opacity: .55;
+        cursor: default;
+  
+  &.error
+    .{$prefix}-label
+      &:before
+        border: $globalBorderWidth $globalBorderStyle $error;
+
+/*************************************************************************/
+/* Form Group */
+
+.{$prefix}-form-group
+  &.inline
+    .{$prefix}
+      &-checkbox-container,
+      &-radio-container
+          display: table-cell;
+          vertical-align: middle;
+          
+  &.group-up
+    border: $globalBorderWidth $globalBorderStyle $lightGrey
+    border-radius: $globalBorderRadius;
+    
+    .{$prefix}
+      &-checkbox-container,
+      &-radio-container
+        border-top: $globalBorderWidth $globalBorderStyle $lightGrey
+        &:first-child
+          border: 0;
+        
+        .{$prefix}-label
+          color: $grey;
+          background: $offwhite;
+          transition: background 400ms ease;
+          &:before
+            left: 16px;
+            {$radioGroupUpBeforeDemensions}
+            
+        .{$prefix}-radio 
+          &:checked 
+            + .{$prefix}-label
+              color: $black;
+              background: $white;
+         
+/*************************************************************************/
+/* Checkboxes */
+.{$prefix}-checkbox-container
+  @extend $radio-checkbox-properties;
+  
+  .{$prefix}-label
+    &:before
+      border-radius: $globalBorderRadius;
+      
+    &:after
+      position:    absolute;
+      top:         50%;
+      left:        6px;
+      font-family: $globalGlyphFontFamily;
+      font-size:   8px;
+      line-height: getLineHeight(@font-size);
+      transform: translateY(-50%);
+      
+      
+  .{$prefix}-checkbox
+    &:checked
+      + .{$prefix}-label
+        &:after
+          content: '\E013'
+
+/*************************************************************************/
+/* Radios */
+.{$prefix}-radio-container
+  @extend $radio-checkbox-properties;
+  
+  .{$prefix}-label
+    &:before
+      border-radius: 25px;
+  
+  .{$prefix}-radio
+    &:checked 
+      + .{$prefix}-label
+        &:before
+          background: $black;
+          border:     $globalBorderWidth $globalBorderStyle $black

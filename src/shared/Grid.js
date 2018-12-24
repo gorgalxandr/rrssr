@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Loader from './Loader'
-import '../styles/grid'
+import '../styles/pages/grid'
+// import '../styles/layout/loader'
 
 class Grid extends Component {
   constructor(props) {

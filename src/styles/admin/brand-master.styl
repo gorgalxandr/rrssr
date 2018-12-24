@@ -1,0 +1,23 @@
+// Desktop and mobile styles
+// User might need to re-arrange @import order to
+// accomodate shared and non-shared styles
+
+if($device == "mobile") {
+  // Mobile only styles
+  @import 'local/variables.mobile'
+
+} else {
+  // Desktop only styles
+  @import 'local/variables.desktop'
+}
+
+/*************************************************************************/
+/* Shared Local */
+@import 'local/typography'
+@import 'local/main'
+
+/*************************************************************************/
+/* Shared Components */
+@import 'components/buttons/main'
+@import 'components/forms/main'
+@import 'components/toggle/main'
