@@ -26,7 +26,7 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-       <Navbar />
+        <Navbar/>
         <main>
           <Switch>
             {routes.map(({ 

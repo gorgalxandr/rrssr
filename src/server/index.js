@@ -24,6 +24,7 @@ import { loadData } from '../api'
 // route(s)
 import routes from '../routes'
 
+// Specific route bases cache method
 const cache = (duration) => {
   return (req, res, next) => {
     let key = '__express__' + req.originalUrl || req.url
@@ -86,26 +87,27 @@ app.get('*', (req, res, next) => {
     }
 
     const store = data ? serialize(data) : { ...data, ...baseContext }
+    // const store = context ? serialize(context) : {}
 
     res.send(`
       <!DOCTYPE html>
       <html>
         <head>
           <title>SSR with RR</title>
+          <style>
+          .fouc {
+            visibility: hidden;
+          }
+          </style>
           ${process.env.NODE_ENV === 'production'
             ? '<link rel=\'stylesheet\' type=\'text/css\' href=\'/styles/server.css\'>'
             : ''
           }
           <script src='/bundle.js' defer></script>
           <script>window.__INITIAL_DATA__ = ${store}</script>
-          <style>
-            body {
-              margin: 0
-            }
-          </style>
         </head>
         <body class='fouc'>
-          <div id='app'>${APP}</div>
+          <div id='app' class='u-full-width u-full-height'>${APP}</div>
           ${FOOTER}
         </body>
       </html>
