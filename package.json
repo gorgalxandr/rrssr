@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode development",
-    "clean": "rimraf ./dist && rimraf ./public/*.js && rimraf ./public/styles/*.css && rimraf ./public/images/*",
+    "clean": "rimraf ./dist && rimraf ./public/*{.js,.map} && rimraf ./public/styles/*.css && rimraf ./public/images/*",
     "watch": "webpack --mode development --debug -w",
     "dev": "NODE_ENV=development nodemon --inspect=9220 ./dist/server.js",
     "dev:debug": "NODE_ENV=development nodemon --inspect-brk=9220 ./dist/server.js",

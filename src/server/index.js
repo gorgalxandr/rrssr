@@ -95,7 +95,7 @@ app.get('*', cache(10), (req, res, next) => {
             ? '<link rel=\'stylesheet\' type=\'text/css\' href=\'/styles/server.css\'>'
             : ''
           }
-          <script src='/bundle.js' defer></script>
+          <script src='/bundle.js' async></script>
           <script>window.__INITIAL_DATA__ = ${store}</script>
         </head>
         <body class='fouc'>
