@@ -4,27 +4,20 @@ import mcache from 'memory-cache'
 import favicon from 'serve-favicon'
 import cors from 'cors'
 import React from 'react'
-import { renderToString, renderToStaticNodeStream, renderToStaticMarkup } from 'react-dom/server'
+import {
+  renderToString,
+  renderToStaticNodeStream,
+  renderToStaticMarkup
+} from 'react-dom/server'
 import { StaticRouter, matchPath } from 'react-router-dom'
 import serialize from 'serialize-javascript'
-// import fetchPopularRepos from '../api'
 import App from '../shared/App'
 import Footer from '../shared/Footer'
-
-// import Home from '../shared/Home'
-// import Grid from '../shared/Grid'
-// import TodoList from '../shared/TodoList'
-
-// render engine
 import renderer from '../utils/renderer'
-
-// api(s)
 import { loadData } from '../api'
-
-// route(s)
 import routes from '../routes'
 
-// Specific route bases cache method
+// Specific route based cache method
 const cache = (duration) => {
   return (req, res, next) => {
     let key = '__express__' + req.originalUrl || req.url
@@ -47,20 +40,20 @@ const app = express()
 app.use(cors())
 app.use(express.static('public'))
 app.use(favicon(path.resolve('public', 'favicon.ico')))
-app.get('*', (req, res, next) => {
+app.get('*', cache(10), (req, res, next) => {
   const activeRoute = routes.find(route => matchPath(req.url, route)) || {}
   let baseContext = {
     locale: 'us',
     theme: 'base_theme'
-
   }
-  let promise
+
+  // let promise
 
   // promise = activeRoute.loadData
   //   ? activeRoute.loadData(req.path)
   //   : Promise.resolve()
 
-  promise = req.path !== '/'
+  const promise = (req.path !== '/' && typeof activeRoute.fetchInitialData === 'function')
     ? activeRoute.fetchInitialData(req.path)
     : Promise.resolve()
 
@@ -87,7 +80,6 @@ app.get('*', (req, res, next) => {
     }
 
     const store = data ? serialize(data) : { ...data, ...baseContext }
-    // const store = context ? serialize(context) : {}
 
     res.send(`
       <!DOCTYPE html>

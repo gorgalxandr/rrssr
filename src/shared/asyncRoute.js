@@ -15,15 +15,12 @@ class AsyncImport extends Component {
 
   toggleFoucClass() {
     if (isClient && document.body.classList.contains('fouc')) {
-    // if (isClient()) {
-      // document.body.classList.remove('fouc')
       const fouc = document.getElementsByClassName('fouc')
-
       while (fouc.length) {
         fouc[0].classList.remove('fouc')
       }
     } else {
-      console.log('Server rendering styles')
+      console.log('Server styles rendered ...')
     }
   }
 
