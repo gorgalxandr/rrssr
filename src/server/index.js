@@ -16,6 +16,7 @@ import Footer from '../shared/Footer'
 import renderer from '../utils/renderer'
 import { loadData } from '../api'
 import routes from '../routes'
+import template from '../utils/template'
 
 // Specific route based cache method
 const cache = (duration) => {
@@ -40,27 +41,47 @@ const app = express()
 app.use(cors())
 app.use(express.static('public'))
 app.use(favicon(path.resolve('public', 'favicon.ico')))
-app.get('*', cache(10), (req, res, next) => {
+
+// Pure client side rendered page
+// This bundle should live without the server as a SPA
+app.get('/client', (req, res) => {
+  let response = template('Client Side Rendered page')
+  res.setHeader('Cache-Control', 'assets, max-age=604800')
+  res.send(response)
+});
+
+// tiny trick to stop server during local development
+app.get('/exit', (req, res) => {
+  if(process.env.PORT) {
+    res.send('Sorry, the server denies your request')
+  } else {
+    res.send('shutting down')
+    process.exit(0)
+  }
+})
+
+// Server rendered app
+app.get('*', (req, res, next) => {
   const activeRoute = routes.find(route => matchPath(req.url, route)) || {}
   let baseContext = {
     locale: 'us',
     theme: 'base_theme'
   }
 
-  // let promise
+  let promise
 
   // promise = activeRoute.loadData
   //   ? activeRoute.loadData(req.path)
   //   : Promise.resolve()
 
-  const promise = (req.path !== '/' && typeof activeRoute.fetchInitialData === 'function')
+  promise = (req.path !== '/' && typeof activeRoute.fetchInitialData === 'function')
     ? activeRoute.fetchInitialData(req.path)
     : Promise.resolve()
 
   promise.then(data => {
     const context = data ? { ...data, ...baseContext } : { ...baseContext }
     const FOOTER = renderToStaticMarkup(<Footer/>)
-    const APP = renderToString(
+    const APP = renderToStaticNodeStream(
       <div>
         <StaticRouter 
           location={req.url} 
@@ -79,7 +100,7 @@ app.get('*', cache(10), (req, res, next) => {
       return res.redirect(301, context.url)
     }
 
-    const store = data ? serialize(data) : { ...data, ...baseContext }
+    const store = data ? serialize(data) : serialize({ ...data, ...baseContext })
 
     res.send(`
       <!DOCTYPE html>
@@ -96,7 +117,7 @@ app.get('*', cache(10), (req, res, next) => {
             : ''
           }
           <script src='/bundle.js' async></script>
-          <script>window.__INITIAL_DATA__ = ${store}</script>
+          <script>window.__STATE__ = ${store}</script>
         </head>
         <body class='fouc'>
           <div id='app' class='u-full-width u-full-height'>${APP}</div>
@@ -108,5 +129,5 @@ app.get('*', cache(10), (req, res, next) => {
 })
 
 app.listen(process.env.PORT || 3000, () => {
-  console.log(`Server is listening on port: 3000`)
+  console.log('\x1b[35m%s\x1b[0m', `Server is listening on port: 3000`)
 })
