@@ -159,7 +159,7 @@ main
   // z-index 9999
   // height max-content
   // overflow scroll
-  margin-top 96px
+  margin-top 92px
 
 ul
   list-style-type none
@@ -289,18 +289,6 @@ body.loggedIn .header ul li.loggedOut
 .pageNotFound
   padding-bottom 30px
 
-.footer 
-  width 100%
-  background-color #1a1a1a
-  padding 50px 0
-  text-align center
-  border-width 1px 0 0 0
-  border-color #fff
-  border-style solid
-  .copyright
-    color #fff
-    font-size 10px
-    padding 1px
 
 /* Index */
 h1
@@ -481,3 +469,157 @@ td a, td a:hover, td a:active
   min-height 100%
   padding-bottom $footerMobileHeight
   position relative
+
+.home
+  position relative
+  background #142929
+  width 100%
+  display block
+  text-align center
+  font-size 3.4em
+  font-weight bold
+  padding 200px
+  color white
+
+.hero_txt_wrap
+  // not working for centering div
+  // position absolute
+  // left 50%
+  // right 50%
+  // text-align center
+  // max-width 650px
+  // margin-left auto
+  // margin-right auto
+  // width 650px
+  position relative
+  span
+    padding 10px
+
+
+// Loader
+
+.loader 
+  width 100%
+  height -webkit-fill-available
+  background-color #142929 // #008f8f // #06cf67
+  position fixed
+  left 0
+  right 0
+  top 184px
+  bottom 0
+  margin auto
+  max-width 100%
+  max-height 100%
+  overflow auto
+  padding-top calc(50% - 410px) !important
+  z-index 9999
+
+.cssload-loader {
+	position: relative;
+	width: 14px;
+	height: 14px;
+	left: 46%;
+	left: calc(50% - 7px);
+		left: -o-calc(50% - 7px);
+		left: -ms-calc(50% - 7px);
+		left: -webkit-calc(50% - 7px);
+		left: -moz-calc(50% - 7px);
+	
+	border-radius: 14px;
+	background-color: white;
+	transform-origin:	50% 50%;
+		-o-transform-origin:	50% 50%;
+		-ms-transform-origin:	50% 50%;
+		-webkit-transform-origin:	50% 50%;
+		-moz-transform-origin:	50% 50%;
+	animation: cssload-loader 0.4s ease-in-out infinite
+		-o-animation: cssload-loader 0.4s ease-in-out infinite
+		-ms-animation: cssload-loader 0.4s ease-in-out infinite
+		-webkit-animation: cssload-loader 0.4s ease-in-out infinite
+		-moz-animation: cssload-loader 0.4s ease-in-out infinite
+}
+
+.cssload-loader:before {
+	content: "";
+	position: absolute;
+	background-color: white;
+	top: 0px;
+	left: -28px;
+	height: 14px;
+	width: 14px;
+	border-radius: 14px;
+}
+
+.cssload-loader:after {
+	content: ""
+	position: absolute
+	background-color: white
+	top: 0px
+	left: 28px
+	height: 14px
+	width: 14px
+	border-radius: 14px
+}
+
+@keyframes cssload-loader {
+		0%{transform:rotate(0deg);}
+		50%{transform:rotate(180deg);}
+		100%{transform:rotate(180deg);}
+}
+
+@-o-keyframes cssload-loader {
+		0%{-o-transform:rotate(0deg);}
+		50%{-o-transform:rotate(180deg);}
+		100%{-o-transform:rotate(180deg);}
+}
+
+@-ms-keyframes cssload-loader {
+		0%{-ms-transform:rotate(0deg);}
+		50%{-ms-transform:rotate(180deg);}
+		100%{-ms-transform:rotate(180deg);}
+}
+
+@-webkit-keyframes cssload-loader {
+		0%{-webkit-transform:rotate(0deg);}
+		50%{-webkit-transform:rotate(180deg);}
+		100%{-webkit-transform:rotate(180deg);}
+}
+
+@-moz-keyframes cssload-loader {
+		0%{-moz-transform:rotate(0deg);}
+		50%{-moz-transform:rotate(180deg);}
+		100%{-moz-transform:rotate(180deg);}
+}
+
+.footer
+  width 100%
+  background #ca0000
+  height 306px
+  padding 42px 42px 0
+  min-width 684px
+  // max-width 940px
+  margin 0 auto
+  color #999
+
+  .copyright
+    border-top 1px solid white
+
+  .footer-text
+    color white
+    text-align right
+    font-size 14px
+    font-family sans-serif
+    max-width 940px
+
+// .footer 
+//   width 100%
+//   background-color #1a1a1a
+//   padding 50px 0
+//   text-align center
+//   border-width 1px 0 0 0
+//   border-color #fff
+//   border-style solid
+//   .copyright
+//     color #fff
+//     font-size 10px
+//     padding 1px

@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { func, node, any } from 'prop-types'
 import Loader from './Loader'
 import isClient from '../utils/isClient'
 
-class AsyncImport extends Component {
+class AsyncImport extends PureComponent {
   static propTypes = {
     load: func.isRequired,
     children: any.isRequired
