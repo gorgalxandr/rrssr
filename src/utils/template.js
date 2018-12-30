@@ -27,7 +27,7 @@ export default function template(title, initialState = {}, content = '') {
                 }
                 <link href="styles/server.css" rel="stylesheet">
               </head>
-              <body class='fouc'>
+              <body class=''>
                 <div id='app' class='u-full-width u-full-height'>
                   <!--- magic happens here -->  ${content}
                 </div>

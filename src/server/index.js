@@ -65,7 +65,8 @@ app.get('*', (req, res, next) => {
   const activeRoute = routes.find(route => matchPath(req.url, route)) || {}
   let baseContext = {
     locale: 'us',
-    theme: 'base_theme'
+    theme: 'base_theme',
+    name: routes.name
   }
 
   let promise
@@ -78,7 +79,7 @@ app.get('*', (req, res, next) => {
     ? activeRoute.fetchInitialData(req.path)
     : Promise.resolve()
 
-  promise.then(data => {
+  promise.then((data, routes) => {
     const context = data ? { ...data, ...baseContext } : { ...baseContext }
     const FOOTER = renderToStaticMarkup(<Footer/>)
     const APP = renderToStaticNodeStream(
@@ -106,7 +107,7 @@ app.get('*', (req, res, next) => {
       <!DOCTYPE html>
       <html>
         <head>
-          <title>SSR with RR</title>
+          <title>DEMO_APP</title>
           <style>
           .fouc {
             visibility: hidden;
