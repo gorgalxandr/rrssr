@@ -10,22 +10,27 @@ class AsyncImport extends PureComponent {
   }
 
   state = {
-    component: null
+    component: null,
+    serverRender: false
   }
 
   toggleFoucClass() {
-    if (isClient && document.body.classList.contains('fouc')) {
-      const fouc = document.getElementsByClassName('fouc')
-      while (fouc.length) {
-        fouc[0].classList.remove('fouc')
+    if (!this.state.serverRender) {
+      if (isClient && document.body.classList.contains('fouc')) {
+        const fouc = document.getElementsByClassName('fouc')
+        while (fouc.length) {
+          fouc[0].classList.remove('fouc')
+        }
+      } else {
+        console.log('Server styles rendered ...')
       }
-    } else {
-      console.log('Server styles rendered ...')
     }
   }
 
   componentWillMount() {
-    this.toggleFoucClass()
+    if (!this.state.serverRender) {
+      this.toggleFoucClass()
+    }
   }
 
   componentDidMount() {
@@ -33,7 +38,8 @@ class AsyncImport extends PureComponent {
       .then(component => {
         setTimeout(() => this.toggleFoucClass(), 0)
         this.setState(() => ({
-          component: component.default
+          component: component.default,
+          serverRender: true
         }))
       })
   }

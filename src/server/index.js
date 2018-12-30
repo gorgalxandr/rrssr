@@ -13,13 +13,13 @@ import { StaticRouter, matchPath } from 'react-router-dom'
 import serialize from 'serialize-javascript'
 import App from '../shared/App'
 import Footer from '../shared/Footer'
-import renderer from '../utils/renderer'
-import { loadData } from '../api'
 import routes from '../routes'
 import template from '../utils/template'
+import render from '../utils/renderer'
+import { loadData } from '../api'
 
 // Specific route based cache method
-const cache = (duration) => {
+const cache = duration => {
   return (req, res, next) => {
     let key = '__express__' + req.originalUrl || req.url
     let cachedBody = mcache.get(key)
@@ -38,6 +38,8 @@ const cache = (duration) => {
 }
 
 const app = express()
+const footer = renderToStaticMarkup(<Footer/>)
+
 app.use(cors())
 app.use(express.static('public'))
 app.use(favicon(path.resolve('public', 'favicon.ico')))
@@ -45,7 +47,7 @@ app.use(favicon(path.resolve('public', 'favicon.ico')))
 // Pure client side rendered page
 // This bundle should live without the server as a SPA
 app.get('/client', (req, res) => {
-  let response = template('Client Side Rendered page')
+  let response = template('Client Side Rendered page', {}, 'Hello')
   res.setHeader('Cache-Control', 'assets, max-age=604800')
   res.send(response)
 });
@@ -61,27 +63,18 @@ app.get('/exit', (req, res) => {
 })
 
 // Server rendered app
-app.get('*', (req, res, next) => {
+app.get('/popular/:id', (req, res, next) => {
   const activeRoute = routes.find(route => matchPath(req.url, route)) || {}
-  let baseContext = {
+  const repos_context = {
     locale: 'us',
     theme: 'base_theme',
-    name: routes.name
+    name: 'Popular Repos'
   }
-
-  let promise
-
-  // promise = activeRoute.loadData
-  //   ? activeRoute.loadData(req.path)
-  //   : Promise.resolve()
-
-  promise = (req.path !== '/' && typeof activeRoute.fetchInitialData === 'function')
+  const promise = (req.path !== '/' && typeof activeRoute.fetchInitialData === 'function')
     ? activeRoute.fetchInitialData(req.path)
     : Promise.resolve()
 
   promise.then((data, routes) => {
-    const context = data ? { ...data, ...baseContext } : { ...baseContext }
-    const FOOTER = renderToStaticMarkup(<Footer/>)
     const APP = renderToStaticNodeStream(
       <div>
         <StaticRouter 
@@ -92,6 +85,7 @@ app.get('*', (req, res, next) => {
         </StaticRouter>
       </div>
     )
+    const context = data ? { ...data, ...repos_context } : { ...repos_context }
 
     if (context.status === 404) {
       res.status(404)
@@ -122,13 +116,59 @@ app.get('*', (req, res, next) => {
         </head>
         <body class='fouc'>
           <div id='app' class='u-full-width u-full-height'>${APP}</div>
-          ${FOOTER}
+          ${footer}
         </body>
       </html>
     `)
   }).catch(next)
 })
 
+app.get('/', (req, res, next) => {
+  // necressary for server-side render to avoid undefined
+  let staticContext = {}
+
+  const homeState = {
+    locale: 'us',
+    theme: 'home_theme',
+  }
+
+  const promise = (req.path === '/')
+    ? Promise.resolve()
+    : Promise.reject()
+
+  promise.then(() => {
+    const context = { ...staticContext }
+    const state = serialize({ ...homeState })
+
+    console.log('[ context, state ]', context, state)
+
+    const app = renderToStaticNodeStream(
+      <React.Fragment>
+        <StaticRouter 
+          location={req.url} 
+          context={context}
+        >
+          <App />
+        </StaticRouter>
+      </React.Fragment>
+    )
+
+    const html = render('Home', state, app, footer)
+
+    if (context.status === 404) {
+      res.status(404)
+    }
+
+    if (context.url) {
+      res.redirect(301, context.url)
+    }
+
+    res.setHeader('Cache-Control', 'assets, max-age=0')
+    // res.send(html)
+    res.status(context.statusCode || 200).send(html)
+  }).catch(next)
+})
+
 app.listen(process.env.PORT || 3000, () => {
-  console.log('\x1b[35m%s\x1b[0m', `Server is listening on port: 3000`)
+  console.log('\x1b[35m%s\x1b[0m', `Server is running at http://localhost:${process.env.PORT || 3000}`)
 })

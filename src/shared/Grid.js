@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Loader from './Loader'
 import '../styles/pages/grid'
-// import '../styles/layout/loader'
 
 class Grid extends Component {
   constructor(props) {
@@ -9,8 +8,8 @@ class Grid extends Component {
 
     let repos
     if (__isBrowser__) {
-      repos = window.__INITIAL_DATA__
-      delete window.__INITIAL_DATA__
+      repos = window.__STATE__
+      delete window.__STATE__
     } else {
       repos = this.props.staticContext.data
     }
@@ -18,6 +17,7 @@ class Grid extends Component {
     this.state = {
       repos,
       loading: repos ? false : true,
+      loaded: false
     }
 
     this.fetchRepos = this.fetchRepos.bind(this)
@@ -41,9 +41,7 @@ class Grid extends Component {
       // lang: repos.langs[lang] ? repos.langs.push(lang) : console.log(`Making a new object @REPOS > LANGS > ${LANG}`)
     }))
 
-
-
-    // Available only on the as prop route method 
+    // Available only as prop route method 
     this.props.fetchInitialData(lang)
       .then(repos => this.setState(() => ({
         repos,
@@ -54,29 +52,34 @@ class Grid extends Component {
   render() {
     const { loading, repos } = this.state
 
-    if (loading === true) {
-      return <Loader/>
-    }
+    // if (loading === true) {
+    //   return <Loader/>
+    // }
 
     return (
-      <div className='grid'>
-        <ul>
-          {repos.map(({
-            name, 
-            owner, 
-            stargazers_count, 
-            html_url 
-          }) => (
-            <li key={name} style={{margin: 30}}>
+      <React.Fragment>
+        { loading
+          ? (<Loader/>)
+          : (<div className='grid'>
               <ul>
-                <li><a href={html_url}>{name}</a></li>
-                <li>@{owner.login}</li>
-                <li>{stargazers_count} stars</li>
+                {repos.map(({
+                  name, 
+                  owner, 
+                  stargazers_count, 
+                  html_url 
+                }) => (
+                  <li key={name} style={{margin: 30}}>
+                    <ul>
+                      <li><a href={html_url}>{name}</a></li>
+                      <li>@{owner.login}</li>
+                      <li>{stargazers_count} stars</li>
+                    </ul>
+                  </li>
+                ))}
               </ul>
-            </li>
-          ))}
-        </ul>
-      </div>
+            </div>)
+        }
+      </React.Fragment>
     )
   }
 }
