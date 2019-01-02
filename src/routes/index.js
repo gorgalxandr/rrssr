@@ -12,21 +12,36 @@ import asyncRoute from '../shared/asyncRoute'
 import fetchPopularRepos,  { loadData }  from '../api'
 // import { loadData } from '../api'
 
-const routes =  [
-  {
+const home = function() {
+  return {
     name: 'Home',
     path: '/',
     exact: true,
     component: asyncRoute(() => import('../shared/Home')),
     title: 'Select a language'
-  },
-  {
+  }
+}
+
+const repos = function() {
+  return {
     name: 'Popular Repos',
     path: '/popular/:id',
     component: asyncRoute(() => import('../shared/Grid')),
     title: `Languages`,
     fetchInitialData: (path = '') => fetchPopularRepos(path.split('/').pop())
-  },
+  }
+}
+
+const routes =  [
+  // {
+  //   name: 'Home',
+  //   path: '/',
+  //   exact: true,
+  //   component: asyncRoute(() => import('../shared/Home')),
+  //   title: 'Select a language'
+  // },
+  home(),
+  repos(),
   {
     name: 'Todos',
     path: '/todos',

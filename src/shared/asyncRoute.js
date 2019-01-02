@@ -38,10 +38,25 @@ class AsyncImport extends PureComponent {
       .then(component => {
         setTimeout(() => this.toggleFoucClass(), 0)
         this.setState(() => ({
-          component: component.default,
-          serverRender: true
+          component: component.default
         }))
       })
+  }
+
+  // Ran as a way to resolve multiple setState()s
+  componentDidUpdate(prevProps, prevState) {
+    // if (prevProps.match.params.id !== this.props.match.params.id) {
+      // console.log('REDRAW REQUIRED')
+    // }
+    if (prevState.component !== null) {
+      console.log('REDRAW REQUIRED')
+    }
+
+    if (prevState.component === null) {
+      this.setState(() => ({
+        serverRender: false
+      }))
+    }
   }
 
   render() {
