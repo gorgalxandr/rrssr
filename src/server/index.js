@@ -95,7 +95,7 @@ app.get('/popular/:id', (req, res, next) => {
       return res.redirect(301, context.url)
     }
 
-    const store = data ? serialize(data) : serialize({ ...data, ...baseContext })
+    const store = data ? serialize(data) : serialize({ ...data, ...repos_context })
 
     res.send(`
       <!DOCTYPE html>
@@ -164,7 +164,6 @@ app.get('/', (req, res, next) => {
     }
 
     res.setHeader('Cache-Control', 'assets, max-age=0')
-    // res.send(html)
     res.status(context.statusCode || 200).send(html)
   }).catch(next)
 })
