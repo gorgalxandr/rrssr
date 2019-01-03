@@ -22,7 +22,7 @@ class AsyncImport extends PureComponent {
           fouc[0].classList.remove('fouc')
         }
       } else {
-        console.log('Server styles rendered ...')
+        console.log('Server styles rendering ...')
       }
     }
   }
@@ -49,12 +49,12 @@ class AsyncImport extends PureComponent {
       // console.log('REDRAW REQUIRED')
     // }
     if (prevState.component !== null) {
-      console.log('REDRAW REQUIRED')
+      console.log(`Componentloaded`, JSON.stringify(prevProps, null, 2))
     }
 
     if (prevState.component === null) {
       this.setState(() => ({
-        serverRender: false
+        serverRender: true
       }))
     }
   }

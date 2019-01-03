@@ -52,13 +52,9 @@ class Grid extends Component {
   render() {
     const { loading, repos } = this.state
 
-    // if (loading === true) {
-    //   return <Loader/>
-    // }
-
     return (
       <React.Fragment>
-        { loading
+        { !loading
           ? (<Loader/>)
           : (<div className='grid'>
               <ul>

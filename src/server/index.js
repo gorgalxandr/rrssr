@@ -64,18 +64,27 @@ app.get('/exit', (req, res) => {
 
 // Server rendered app
 app.get('/popular/:id', (req, res, next) => {
+  // necressary for server-side render to avoid undefined
+  let staticContext = {}
+
   const activeRoute = routes.find(route => matchPath(req.url, route)) || {}
   const repos_context = {
     locale: 'us',
-    theme: 'base_theme',
+    theme: 'repos_theme',
     name: 'Popular Repos'
   }
+
   const promise = (req.path !== '/' && typeof activeRoute.fetchInitialData === 'function')
     ? activeRoute.fetchInitialData(req.path)
     : Promise.resolve()
 
-  promise.then((data, routes) => {
-    const APP = renderToStaticNodeStream(
+  promise.then(data => {
+    const context = data ? { ...data, ...staticContext } : { ...staticContext }
+    const state = data ? serialize(data) : serialize({ ...data, ...repos_context })
+
+    console.log('[ context, state ]', context, state)
+    
+    const app = renderToStaticNodeStream(
       <div>
         <StaticRouter 
           location={req.url} 
@@ -85,7 +94,6 @@ app.get('/popular/:id', (req, res, next) => {
         </StaticRouter>
       </div>
     )
-    const context = data ? { ...data, ...repos_context } : { ...repos_context }
 
     if (context.status === 404) {
       res.status(404)
@@ -94,8 +102,6 @@ app.get('/popular/:id', (req, res, next) => {
     if (context.url) {
       return res.redirect(301, context.url)
     }
-
-    const store = data ? serialize(data) : serialize({ ...data, ...repos_context })
 
     res.send(`
       <!DOCTYPE html>
@@ -111,12 +117,12 @@ app.get('/popular/:id', (req, res, next) => {
             ? '<link rel=\'stylesheet\' type=\'text/css\' href=\'/styles/server.css\'>'
             : ''
           }
-          <script src='/bundle.js' async></script>
-          <script>window.__STATE__ = ${store}</script>
         </head>
         <body class='fouc'>
-          <div id='app' class='u-full-width u-full-height'>${APP}</div>
+          <div id='app' class='u-full-width u-full-height'>${app}</div>
           ${footer}
+          <script src='/bundle.js' async></script>
+          <script>window.__STATE__ = ${state}</script>
         </body>
       </html>
     `)

@@ -1,16 +1,5 @@
 import asyncRoute from '../shared/asyncRoute'
-
-// import Home from '../shared/Home'
-// const Home = asyncRoute(() => import('../shared/Home'))
-// import Grid from '../shared/Grid'
-// const Grid = asyncRoute(() => import('../shared/Grid'))
-// import Todos from '../shared/Todos'
-// const Todos = asyncRoute(() => import('../shared/Todos'))
-// import TodoList from '../shared/TodoList'
-
-// api(s)
 import fetchPopularRepos,  { loadData }  from '../api'
-// import { loadData } from '../api'
 
 const home = function() {
   return {
@@ -32,17 +21,8 @@ const repos = function() {
   }
 }
 
-const routes =  [
-  // {
-  //   name: 'Home',
-  //   path: '/',
-  //   exact: true,
-  //   component: asyncRoute(() => import('../shared/Home')),
-  //   title: 'Select a language'
-  // },
-  home(),
-  repos(),
-  {
+const todos = function() {
+  return {
     name: 'Todos',
     path: '/todos',
     exact: true,
@@ -52,6 +32,12 @@ const routes =  [
     // Button name
     task: 'Task'
   }
+}
+
+const routes =  [
+  home(),
+  repos(),
+  todos()
 ]
 
 export default routes
