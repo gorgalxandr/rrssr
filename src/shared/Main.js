@@ -2,7 +2,9 @@ import React, { PureComponent } from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom'
 // import fetchPopularRepos, { loadData } from '../api'
 import routes from  '../routes'
-import NoMatch from './NoMatch'
+import Header from './Header'
+import Footer from './Footer'
+// import NoMatch from './NoMatch'
 import '../styles/main'
 
 console.log('[ routes ]', routes)
@@ -10,8 +12,10 @@ console.log('[ routes ]', routes)
 export default class Main extends PureComponent {
   render() {
     return (
-      <main role='application'>
-        <div className='App main-layout content-wrapper'>
+      <React.Fragment>
+        <main role='application'>
+          <div className='App main-layout content-wrapper'>
+          <Header/>
           <Switch>
             {routes.map(({ 
               path, 
@@ -27,8 +31,10 @@ export default class Main extends PureComponent {
               />
             ))}
           </Switch>
-        </div>
-      </main>
+          </div>
+        </main>
+        <Footer/>
+      </React.Fragment>
     )
   }
 }

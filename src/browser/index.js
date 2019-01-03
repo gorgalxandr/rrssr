@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from 'react-dom'
+import { render, hydrate } from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
 import { BrowserRouter } from 'react-router-dom'
 import Main from '../shared/Main'
@@ -11,7 +11,7 @@ render(
     </BrowserRouter>
   </AppContainer>,
   document.getElementById('app')
-);
+)
 
 // Hot-reloading
 if (module.hot) {

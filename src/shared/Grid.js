@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import Loader from './Loader'
 import '../styles/pages/grid'
 
-class Grid extends Component {
+class Grid extends PureComponent {
   constructor(props) {
     super(props)
 
@@ -54,7 +54,7 @@ class Grid extends Component {
 
     return (
       <React.Fragment>
-        { !loading
+        { loading
           ? (<Loader/>)
           : (<div className='grid'>
               <ul>

@@ -1,35 +1,10 @@
 import React, { PureComponent } from 'react'
-import { NavLink} from 'react-router-dom'
+import { NavLink, withRouter } from 'react-router-dom'
 import links from './Links'
-// import '../styles/layout/navbar'
+import '../styles/layout/navbar'
 
-export default class Navbar extends PureComponent {
+class Navbar extends PureComponent {
   render() {
-    // const languages = [{
-    //   name: 'All',
-    //   param: 'all'
-    // }, 
-    // {
-    //   name: 'JS',
-    //   param: 'javascript',
-    // }, 
-    // {
-    //   name: 'Ruby',
-    //   param: 'ruby',
-    // }, 
-    // {
-    //   name: 'Python',
-    //   param: 'python',
-    // }, 
-    // {
-    //   name: 'Java',
-    //   param: 'java',
-    // },
-    // {
-    //   name: 'Typescript',
-    //   param: 'typescript',
-    // }]
-
     return (
       <header className='navbar navbar-default navbar-fixed-top navbar-transparent navbar-highlight-royal-blue'>
         <div className='container'>
@@ -68,3 +43,5 @@ export default class Navbar extends PureComponent {
     )
   }
 }
+
+export default withRouter(Navbar)

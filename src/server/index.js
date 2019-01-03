@@ -4,20 +4,13 @@ import mcache from 'memory-cache'
 import favicon from 'serve-favicon'
 import cors from 'cors'
 import React from 'react'
-import {
-  renderToString,
-  renderToStaticNodeStream,
-  renderToStaticMarkup
-} from 'react-dom/server'
+import { renderToStaticNodeStream } from 'react-dom/server'
 import { StaticRouter, matchPath } from 'react-router-dom'
 import serialize from 'serialize-javascript'
 import Main from '../shared/Main'
-import Footer from '../shared/Footer'
-import Header from '../shared/Header'
 import routes from '../routes'
 import template from '../utils/template'
 import render from '../utils/renderer'
-import { loadData } from '../api'
 
 // Specific route based cache method
 const cache = duration => {
@@ -38,9 +31,7 @@ const cache = duration => {
   }
 }
 
-const header = renderToStaticMarkup(<Header/>)
 const app = express()
-const footer = renderToStaticMarkup(<Footer/>)
 
 app.use(cors())
 app.use(express.static('public'))
@@ -65,15 +56,14 @@ app.get('/exit', (req, res) => {
 })
 
 // Server rendered app
-app.get('/popular/:id', (req, res, next) => {
+app.get('*', (req, res, next) => {
   // necressary for server-side render to avoid undefined
   let staticContext = {}
 
   const activeRoute = routes.find(route => matchPath(req.url, route)) || {}
-  const repos_context = {
+  const initialState = {
     locale: 'us',
-    theme: 'repos_theme',
-    name: 'Popular Repos'
+    theme: 'home_theme',
   }
 
   const promise = (req.path !== '/' && typeof activeRoute.fetchInitialData === 'function')
@@ -81,77 +71,9 @@ app.get('/popular/:id', (req, res, next) => {
     : Promise.resolve()
 
   promise.then(data => {
-    const context = data ? { ...data, ...staticContext } : { ...staticContext }
-    const state = data ? serialize(data) : serialize({ ...data, ...repos_context })
-
-    console.log('[ context, state ]', context, state)
+    const context = data ? { ...data, ...staticContext } : { ...staticContext } // Should this have data other than staticContext?
+    const state = data ? serialize(data) : serialize({ ...data, ...initialState })
     
-    const app = renderToStaticNodeStream(
-      <React.Fragment>
-        <StaticRouter 
-          location={req.url} 
-          context={context}
-        >
-          <Main/>
-        </StaticRouter>
-      </React.Fragment>
-    )
-
-    if (context.status === 404) {
-      res.status(404)
-    }
-
-    if (context.url) {
-      return res.redirect(301, context.url)
-    }
-
-    res.setHeader('Cache-Control', 'assets, max-age=0')
-    res.status(context.statusCode || 200)
-    .send(`
-      <!DOCTYPE html>
-      <html>
-        <head>
-          <title>DEMO_APP</title>
-          <style>
-          .fouc {
-            visibility: hidden;
-          }
-          </style>
-          ${process.env.NODE_ENV === 'production'
-            ? '<link rel=\'stylesheet\' type=\'text/css\' href=\'/styles/server.css\'>'
-            : ''
-          }
-        </head>
-        <body class='fouc'>
-          <div id='app' class='u-full-width u-full-height'>${app}</div>
-          ${footer}
-          <script src='/bundle.js' async></script>
-          <script>window.__STATE__ = ${state}</script>
-        </body>
-      </html>
-    `)
-  }).catch(next)
-})
-
-app.get('/', (req, res, next) => {
-  // necressary for server-side render to avoid undefined
-  let staticContext = {}
-
-  const homeState = {
-    locale: 'us',
-    theme: 'home_theme',
-  }
-
-  const promise = (req.path === '/')
-    ? Promise.resolve()
-    : Promise.reject()
-
-  promise.then(() => {
-    const context = { ...staticContext }
-    const state = serialize({ ...homeState })
-
-    console.log('[ context, state ]', context, state)
-
     const app = renderToStaticNodeStream(
       <React.Fragment>
         <StaticRouter 
@@ -165,10 +87,8 @@ app.get('/', (req, res, next) => {
 
     const html = render(
       'Home',
-      header,
       app,
       state,
-      footer
     )
 
     if (context.status === 404) {
@@ -176,7 +96,7 @@ app.get('/', (req, res, next) => {
     }
 
     if (context.url) {
-      res.redirect(301, context.url)
+      return res.redirect(301, context.url)
     }
 
     res.setHeader('Cache-Control', 'assets, max-age=0')

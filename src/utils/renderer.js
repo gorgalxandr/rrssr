@@ -1,19 +1,13 @@
-export default function render(
-  title,
-  header,
-  app = '', 
-  state = {},
-  footer
-  ) {
+export default function render(title, app = '', state = {}) {
   let scripts = ''
 
   if (app) {
     scripts = ` <script>
         window.__STATE__ = ${state}
       </script>
-      <script src='bundle.js'></script>`
+      <script src='bundle.js' async></script>`
   } else {
-    scripts = ` <script src='bundle.js'> </script> `
+    scripts = ` <script src='bundle.js' async> </script> `
   }
 
   console.log('Renderer run ...')
@@ -34,11 +28,9 @@ export default function render(
         }
       </head>
       <body class='fouc'>
-        ${header}
         <div id='app' class='u-full-width u-full-height'>
           <!--- magic happens here -->  ${app}
         </div>
-        ${footer}
         ${scripts}
       </body>
     </html>`

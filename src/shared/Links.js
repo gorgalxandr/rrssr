@@ -1,4 +1,4 @@
-export default class Links [{
+const links = [{
     name: 'All',
     param: 'all'
   }, 
@@ -22,3 +22,5 @@ export default class Links [{
     name: 'Typescript',
     param: 'typescript',
   }]
+
+export default links
