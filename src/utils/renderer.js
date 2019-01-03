@@ -1,4 +1,10 @@
-export default function render(title, state = {}, app = '', footer) {
+export default function render(
+  title,
+  header,
+  app = '', 
+  state = {},
+  footer
+  ) {
   let scripts = ''
 
   if (app) {
@@ -14,25 +20,26 @@ export default function render(title, state = {}, app = '', footer) {
 
   return `<!DOCTYPE html>
     <html lang='${state.locale}'>
-    <head>
-      <meta charset='utf-8'>
-      <title>${title}</title>
-      <style>
-      .fouc {
-        visibility: hidden;
-      }
-      </style>
-      ${process.env.NODE_ENV === 'production'
-        ? '<link rel=\'stylesheet\' type=\'text/css\' href=\'/styles/server.css\'>'
-        : ''
-      }
-    </head>
-    <body class='fouc'>
-      <div id='app' class='u-full-width u-full-height'>
-        <!--- magic happens here -->  ${app}
-      </div>
-    ${footer}
-    ${scripts}
-    </body>
+      <head>
+        <meta charset='utf-8'>
+        <title>${title}</title>
+        <style>
+        .fouc {
+          visibility: hidden;
+        }
+        </style>
+        ${process.env.NODE_ENV === 'production'
+          ? '<link rel=\'stylesheet\' type=\'text/css\' href=\'/styles/server.css\'>'
+          : ''
+        }
+      </head>
+      <body class='fouc'>
+        ${header}
+        <div id='app' class='u-full-width u-full-height'>
+          <!--- magic happens here -->  ${app}
+        </div>
+        ${footer}
+        ${scripts}
+      </body>
     </html>`
 }

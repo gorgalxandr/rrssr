@@ -1,33 +1,34 @@
 import React, { PureComponent } from 'react'
-import { NavLink, withRouter } from 'react-router-dom'
-import '../styles/layout/navbar'
+import { NavLink} from 'react-router-dom'
+import links from './Links'
+// import '../styles/layout/navbar'
 
-class Navbar extends PureComponent {
+export default class Navbar extends PureComponent {
   render() {
-    const languages = [{
-      name: 'All',
-      param: 'all'
-    }, 
-    {
-      name: 'JS',
-      param: 'javascript',
-    }, 
-    {
-      name: 'Ruby',
-      param: 'ruby',
-    }, 
-    {
-      name: 'Python',
-      param: 'python',
-    }, 
-    {
-      name: 'Java',
-      param: 'java',
-    },
-    {
-      name: 'Typescript',
-      param: 'typescript',
-    }]
+    // const languages = [{
+    //   name: 'All',
+    //   param: 'all'
+    // }, 
+    // {
+    //   name: 'JS',
+    //   param: 'javascript',
+    // }, 
+    // {
+    //   name: 'Ruby',
+    //   param: 'ruby',
+    // }, 
+    // {
+    //   name: 'Python',
+    //   param: 'python',
+    // }, 
+    // {
+    //   name: 'Java',
+    //   param: 'java',
+    // },
+    // {
+    //   name: 'Typescript',
+    //   param: 'typescript',
+    // }]
 
     return (
       <header className='navbar navbar-default navbar-fixed-top navbar-transparent navbar-highlight-royal-blue'>
@@ -44,7 +45,7 @@ class Navbar extends PureComponent {
               <span className='icon-bar'></span>
             </button>
             <ul className='nav'>
-              {languages.map(({ name, param }) => (
+              {links.map(({ name, param }) => (
                 <li key={param}>
                   <NavLink 
                     activeStyle={{fontWeight: 'bold'}} 
@@ -67,5 +68,3 @@ class Navbar extends PureComponent {
     )
   }
 }
-
-export default withRouter(Navbar)

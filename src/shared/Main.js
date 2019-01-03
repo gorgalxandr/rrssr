@@ -1,28 +1,17 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom'
-
-// api(s)
-import fetchPopularRepos, { loadData } from '../api'
-
-// route(s)
+// import fetchPopularRepos, { loadData } from '../api'
 import routes from  '../routes'
-
-import Navbar from './Navbar'
 import NoMatch from './NoMatch'
-
-// style(s)
-import '../styles/app'
-import '../styles/layout/header'
-import '../styles/layout/footer'
+import '../styles/main'
 
 console.log('[ routes ]', routes)
 
-class App extends Component {
+export default class Main extends PureComponent {
   render() {
     return (
-      <div className='App main-layout content-wrapper'>
-        <Navbar/>
-        <main>
+      <main role='application'>
+        <div className='App main-layout content-wrapper'>
           <Switch>
             {routes.map(({ 
               path, 
@@ -37,14 +26,15 @@ class App extends Component {
                 render={props => <Component {...props} {...rest} />} 
               />
             ))}
-            <Route 
-              render={props => <NoMatch {...props} />}
-            />
           </Switch>
-        </main>
-      </div>
+        </div>
+      </main>
     )
   }
 }
 
-export default App
+/*
+  <Route 
+    render={props => <NoMatch {...props} />}
+  />
+*/

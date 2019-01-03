@@ -11,8 +11,9 @@ import {
 } from 'react-dom/server'
 import { StaticRouter, matchPath } from 'react-router-dom'
 import serialize from 'serialize-javascript'
-import App from '../shared/App'
+import Main from '../shared/Main'
 import Footer from '../shared/Footer'
+import Header from '../shared/Header'
 import routes from '../routes'
 import template from '../utils/template'
 import render from '../utils/renderer'
@@ -37,6 +38,7 @@ const cache = duration => {
   }
 }
 
+const header = renderToStaticMarkup(<Header/>)
 const app = express()
 const footer = renderToStaticMarkup(<Footer/>)
 
@@ -85,14 +87,14 @@ app.get('/popular/:id', (req, res, next) => {
     console.log('[ context, state ]', context, state)
     
     const app = renderToStaticNodeStream(
-      <div>
+      <React.Fragment>
         <StaticRouter 
           location={req.url} 
           context={context}
         >
-          <App />
+          <Main/>
         </StaticRouter>
-      </div>
+      </React.Fragment>
     )
 
     if (context.status === 404) {
@@ -156,12 +158,18 @@ app.get('/', (req, res, next) => {
           location={req.url} 
           context={context}
         >
-          <App />
+          <Main/>
         </StaticRouter>
       </React.Fragment>
     )
 
-    const html = render('Home', state, app, footer)
+    const html = render(
+      'Home',
+      header,
+      app,
+      state,
+      footer
+    )
 
     if (context.status === 404) {
       res.status(404)
