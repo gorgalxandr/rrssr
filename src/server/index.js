@@ -103,7 +103,9 @@ app.get('/popular/:id', (req, res, next) => {
       return res.redirect(301, context.url)
     }
 
-    res.send(`
+    res.setHeader('Cache-Control', 'assets, max-age=0')
+    res.status(context.statusCode || 200)
+    .send(`
       <!DOCTYPE html>
       <html>
         <head>
@@ -170,7 +172,8 @@ app.get('/', (req, res, next) => {
     }
 
     res.setHeader('Cache-Control', 'assets, max-age=0')
-    res.status(context.statusCode || 200).send(html)
+    res.status(context.statusCode || 200)
+    .send(html)
   }).catch(next)
 })
 
