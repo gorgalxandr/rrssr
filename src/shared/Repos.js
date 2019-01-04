@@ -1,8 +1,8 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import Loader from './Loader'
-import '../styles/pages/grid'
+import '../styles/pages/repos'
 
-class Grid extends PureComponent {
+class Repos extends Component {
   constructor(props) {
     super(props)
 
@@ -56,7 +56,7 @@ class Grid extends PureComponent {
       <React.Fragment>
         { loading
           ? (<Loader/>)
-          : (<div className='grid'>
+          : (<div className='repos'>
               <ul>
                 {repos.map(({
                   name, 
@@ -80,4 +80,4 @@ class Grid extends PureComponent {
   }
 }
 
-export default Grid
+export default Repos

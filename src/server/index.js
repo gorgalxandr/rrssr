@@ -64,6 +64,7 @@ app.get('*', (req, res, next) => {
   const initialState = {
     locale: 'us',
     theme: 'home_theme',
+    repos: {}
   }
 
   const promise = (req.path !== '/' && typeof activeRoute.fetchInitialData === 'function')
@@ -72,7 +73,7 @@ app.get('*', (req, res, next) => {
 
   promise.then(data => {
     const context = data ? { ...data, ...staticContext } : { ...staticContext } // Should this have data other than staticContext?
-    const state = data ? serialize(data) : serialize({ ...data, ...initialState })
+    const state = data ? data : { ...data, ...initialState }
     
     const app = renderToStaticNodeStream(
       <React.Fragment>

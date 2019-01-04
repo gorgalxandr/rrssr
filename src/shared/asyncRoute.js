@@ -1,9 +1,9 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import { func, node, any } from 'prop-types'
 import Loader from './Loader'
 import isClient from '../utils/isClient'
 
-class AsyncImport extends PureComponent {
+class AsyncImport extends Component {
   static propTypes = {
     load: func.isRequired,
     children: any.isRequired
@@ -48,15 +48,15 @@ class AsyncImport extends PureComponent {
     // if (prevProps.match.params.id !== this.props.match.params.id) {
       // console.log('REDRAW REQUIRED')
     // }
-    if (prevState.component !== null) {
-      console.log(`Componentloaded`, JSON.stringify(prevProps, null, 2))
-    }
+    // if (prevState.component !== null) {
+    //   console.log(`Componentloaded`, JSON.stringify(prevProps, null, 2))
+    // }
 
-    if (prevState.component === null) {
-      this.setState(() => ({
-        serverRender: true
-      }))
-    }
+    // if (prevState.component === null) {
+    //   this.setState(() => ({
+    //     serverRender: true
+    //   }))
+    // }
   }
 
   render() {

@@ -1,9 +1,11 @@
+const lang = 'us_en'
+
 export default function render(title, app = '', state = {}) {
   let scripts = ''
 
   if (app) {
     scripts = ` <script>
-        window.__STATE__ = ${state}
+        window.__STATE__ = ${JSON.stringify(state, null, 2)}
       </script>
       <script src='bundle.js' async></script>`
   } else {
@@ -13,7 +15,7 @@ export default function render(title, app = '', state = {}) {
   console.log('Renderer run ...')
 
   return `<!DOCTYPE html>
-    <html lang='${state.locale}'>
+    <html lang='${lang}'>
       <head>
         <meta charset='utf-8'>
         <title>${title}</title>

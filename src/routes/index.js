@@ -15,7 +15,7 @@ const repos = function() {
   return {
     name: 'Popular Repos',
     path: '/popular/:id',
-    component: asyncRoute(() => import('../shared/Grid')),
+    component: asyncRoute(() => import('../shared/Repos')),
     title: `Languages`,
     fetchInitialData: (path = '') => fetchPopularRepos(path.split('/').pop())
   }
