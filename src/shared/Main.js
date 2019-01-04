@@ -1,6 +1,5 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom'
-// import fetchPopularRepos, { loadData } from '../api'
 import routes from  '../routes'
 import Header from './Header'
 import Footer from './Footer'
@@ -9,13 +8,13 @@ import '../styles/main'
 
 console.log('[ routes ]', routes)
 
-export default class Main extends PureComponent {
+export default class Main extends Component {
   render() {
     return (
       <React.Fragment>
+        <Header/>
         <main role='application'>
           <div className='App main-layout content-wrapper'>
-          <Header/>
           <Switch>
             {routes.map(({ 
               path, 
